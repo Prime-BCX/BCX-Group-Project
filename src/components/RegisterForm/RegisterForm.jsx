@@ -12,30 +12,36 @@ function RegisterForm() {
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
+  // Handle form submission
   const registerUser = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent form submission from causing page reload or redirect
 
-    dispatch({
-      type: 'REGISTER',
-      payload: {
-        email: email,
-        first_name: firstName,
-        last_name: lastName,
-        password: password,
-        timezone: timezone, 
-      },
-    });
+    // Only dispatch the registration action if all required fields are filled
+    if (email && firstName && lastName && password && timezone) {
+      dispatch({
+        type: 'REGISTER',
+        payload: {
+          email: email,
+          first_name: firstName,
+          last_name: lastName,
+          password: password,
+          timezone: timezone,
+        },
+      });
+    } else {
+      console.log("Form is not complete");
+    }
   };
 
-
+  // Toggle dropdown visibility
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  }
+    setDropdownOpen(prev => !prev);
+  };
 
-  // Handle timezone selection
+  // Handle timezone selection from dropdown
   const handleTimezoneSelect = (timezone) => {
     setTimezone(timezone);
-    setDropdownOpen(false); 
+    setDropdownOpen(false); // Close the dropdown after selection
   };
 
   return (
@@ -86,16 +92,22 @@ function RegisterForm() {
       <div>
         <label htmlFor="timezone">Timezone:</label>
         <div className="dropdown">
-          <button type="button" onClick={toggleDropdown} className="dropbtn">
+          <button 
+            type="button" 
+            onClick={toggleDropdown} 
+            className="dropbtn"
+            aria-haspopup="true"
+            aria-expanded={dropdownOpen ? "true" : "false"}
+          >
             {timezone || 'Select Timezone'}
           </button>
           {dropdownOpen && (
             <div className="dropdown-content">
               <ul>
-              <li> <a href="#" onClick={() => handleTimezoneSelect('CST')}>CST</a></li>
-              <li><a href="#" onClick={() => handleTimezoneSelect('EST')}>EST</a></li>
-              <li><a href="#" onClick={() => handleTimezoneSelect('PST')}>PST</a></li>
-              <li><a href="#" onClick={() => handleTimezoneSelect('MST')}>MST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('EST'); }}>EST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
               </ul>
             </div>
           )}
@@ -115,7 +127,12 @@ function RegisterForm() {
       </div>
 
       <div>
-        <input className="btn" type="submit" name="submit" value="Register" />
+        <input 
+          className="btn" 
+          type="submit" 
+          name="submit" 
+          value="Register" 
+        />
       </div>
     </form>
   );
