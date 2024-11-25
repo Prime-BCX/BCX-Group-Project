@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function RegisterForm() {
-  const[username,setUserName] = useState('');
+  
   const[email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const[lastName, setLastName] = useState('');
@@ -33,7 +33,7 @@ function RegisterForm() {
         </h3>
       )}
       <div>
-     <label htmlFor="email">Email:</label>
+     <label htmlFor="Email">Email:</label>
         <input
           type="email"
           id="email"
@@ -43,17 +43,7 @@ function RegisterForm() {
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-      <div>
-     <label htmlFor="username">username:</label>
-        <input
-          type="username"
-          id="username"
-          name="username"
-          value={username}
-          required
-          onChange={(event) => setUserName(event.target.value)}
-        />
-      </div>
+     
       <div>
         <label htmlFor="firstName">First Name:</label>
         <input

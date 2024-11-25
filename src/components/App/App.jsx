@@ -10,17 +10,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import PhaseOne from '../Phase1/Phase1';
+import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -59,14 +57,15 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
-
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows UserPage else shows LoginPage
             exact
-            path="/phase1"
+            path="/PhotoUpload/:id"
           >
-            <PhaseOne />
+            <PhotoUpload />
           </ProtectedRoute>
+
+          
 
           <Route
             exact
