@@ -58,12 +58,12 @@ function App() {
             <UserPage />
           </ProtectedRoute>
           <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
+            // logged in shows InfoPage else shows LoginPage
             exact
             path="/PhotoUpload/:id"
           >
-            <PhotoUpload />
-          </ProtectedRoute>
+            <PhotoUpload/>
+          </ProtectedRoute>   
 
           
 
