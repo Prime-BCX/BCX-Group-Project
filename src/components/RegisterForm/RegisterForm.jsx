@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import './RegisterForm.css';
 
 function RegisterForm() {
-  
-  const[email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
-  const[lastName, setLastName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
+  const [timezone, setTimezone] = useState('');
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
@@ -20,9 +22,21 @@ function RegisterForm() {
         first_name: firstName,
         last_name: lastName,
         password: password,
+        timezone: timezone, 
       },
     });
-  }; // end registerUser
+  };
+
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  }
+
+  // Handle timezone selection
+  const handleTimezoneSelect = (timezone) => {
+    setTimezone(timezone);
+    setDropdownOpen(false); 
+  };
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
@@ -32,8 +46,9 @@ function RegisterForm() {
           {errors.registrationMessage}
         </h3>
       )}
+
       <div>
-     <label htmlFor="Email">Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
@@ -43,7 +58,7 @@ function RegisterForm() {
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-     
+
       <div>
         <label htmlFor="firstName">First Name:</label>
         <input
@@ -55,6 +70,7 @@ function RegisterForm() {
           onChange={(event) => setFirstName(event.target.value)}
         />
       </div>
+
       <div>
         <label htmlFor="lastName">Last Name:</label>
         <input
@@ -66,6 +82,26 @@ function RegisterForm() {
           onChange={(event) => setLastName(event.target.value)}
         />
       </div>
+
+      <div>
+        <label htmlFor="timezone">Timezone:</label>
+        <div className="dropdown">
+          <button type="button" onClick={toggleDropdown} className="dropbtn">
+            {timezone || 'Select Timezone'}
+          </button>
+          {dropdownOpen && (
+            <div className="dropdown-content">
+              <ul>
+              <li> <a href="#" onClick={() => handleTimezoneSelect('CST')}>CST</a></li>
+              <li><a href="#" onClick={() => handleTimezoneSelect('EST')}>EST</a></li>
+              <li><a href="#" onClick={() => handleTimezoneSelect('PST')}>PST</a></li>
+              <li><a href="#" onClick={() => handleTimezoneSelect('MST')}>MST</a></li>
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+
       <div>
         <label htmlFor="password">Password:</label>
         <input
@@ -77,8 +113,7 @@ function RegisterForm() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-     
-      
+
       <div>
         <input className="btn" type="submit" name="submit" value="Register" />
       </div>
