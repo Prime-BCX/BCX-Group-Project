@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './ConfirmYourDetailsPage.jsx';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { useSelector } from 'react-redux';
+import NavigationButtons from '../NavigationButtons/NavigationButtons'; // Adjust the path based on your structure
 
 
 function ConfirmYourDetailsPage() {
@@ -24,8 +25,8 @@ function ConfirmYourDetailsPage() {
                 type: 'REGISTER',
                 payload: {
                     email: tempUser.email,
-                    first_name: tempUser.firstName,
-                    last_name: tempUser.lastName,
+                    firstName: tempUser.firstName,
+                    lastName: tempUser.lastName,
                     password: tempUser.password,
                     timezone: tempUser.timezone,
                 },
@@ -50,18 +51,7 @@ function ConfirmYourDetailsPage() {
 
 
             <div className="grid-col grid-col_4">
-
-                <div className="button-group">
-                    <button className="btn btn_sizeSm" 
-                    onClick={handleNavigate}>
-                        Edit
-                    </button>
-                    <button className="btn btn_sizeSm" 
-                    onClick={handleNavigate}>
-                        Looks Good!
-                    </button>
-
-                </div>
+                <NavigationButtons />;
             </div>
         </div>
     );

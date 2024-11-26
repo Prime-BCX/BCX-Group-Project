@@ -19,7 +19,9 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
-
+//For Navigation Buttons:
+import { BrowserRouter as SecondRouter } from 'react-router-dom';
+import NavigationButtons from '../NavigationButtons/NavigationButtons';
 
 function App() {
   const dispatch = useDispatch();
@@ -66,7 +68,7 @@ function App() {
             <PhotoUpload />
           </ProtectedRoute>
 
-          
+
 
           <Route
             exact
@@ -101,7 +103,7 @@ function App() {
             exact
             path="/confirm"
           >
-            <ConfirmYourDetailsPage/>
+            <ConfirmYourDetailsPage />
           </Route>
 
 
@@ -130,6 +132,19 @@ function App() {
       </div>
     </Router>
   );
-}
 
+  //For Navigation Buttons:
+  return (
+    <SecondRouter>
+      <div>
+        <NavigationButtons />
+        <Routes>
+          <Route path="../RegisterPage" element={<RegisterPage />} />
+          <Route path="../PhotoUpload" element={<PhotoUpload />} />
+        </Routes>
+      </div>
+    </SecondRouter>
+  );
+
+}
 export default App;
