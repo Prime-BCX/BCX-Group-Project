@@ -1,8 +1,8 @@
 const userConfirmReducer = (state = {}, action) => {
     switch (action.type) {
-      case 'SET_USER':
+      case 'SET_TEMP_USER':
         return action.payload;
-      case 'UNSET_USER':
+      case 'UNSET_TEMP_USER':
         return {};
       default:
         return state;

@@ -5,7 +5,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 
 function RegisterPage() {
   const history = useHistory();
-
+// console.log ("Hit registration")
   return (
     <div>
       <RegisterForm />

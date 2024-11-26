@@ -2,43 +2,55 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ConfirmYourDetailsPage.jsx';
 import RegisterForm from '../RegisterForm/RegisterForm';
+import { useSelector } from 'react-redux';
+
 
 function ConfirmYourDetailsPage() {
     const history = useHistory();
+    const tempUser = useSelector(state => state.userConfirmReducer)
 
-    // Confirm Your Details Navigation
-    const ConfirmYourDetails = () => {
-        history.push('/ConfirmYourDetails');
+    const handleNavigate = (event) => {
+        registerUser(event)
+        history.push('../PhotoUpload');
     };
 
-    // Trigger the Fetch
+    // Handle form submission
+    const registerUser = (event) => {
+        event.preventDefault(); // Prevent form submission from causing page reload or redirect
 
-    const FETCH_DATA = 'FETCH_DATA';
-    const SET_DATA = 'SET_DATA';
-    const fetchData = () => ({
-        type: FETCH_DATA,
-    });
-
-    const handleNavigate = () => {
-        history.push('../PhotoUpload');
+        // Only dispatch the registration action if all required fields are filled
+        if (tempUser.email && tempUser.firstName && tempUser.lastName && tempUser.password && tempUser.timezone) {
+            dispatch({
+                type: 'REGISTER',
+                payload: {
+                    email: tempUser.email,
+                    first_name: tempUser.firstName,
+                    last_name: tempUser.lastName,
+                    password: tempUser.password,
+                    timezone: tempUser.timezone,
+                },
+            });
+        } else {
+            console.log("Form is not complete");
+        }
     };
 
     return (
         <div className="container">
-            <h2>{heading}</h2>
+            <h2>Confirm Your Details</h2>
             <h3>Does this all look correct?</h3>
 
             {/* Display the user information */}
             <ul>
-                <li>Email: {email}</li>
-                <li>First Name: {firstName}</li>
-                <li>Last Name: {lastName}</li>
-                <li>Timezone: {timezone}</li>
+                <li>Email: {tempUser.email}</li>
+                <li>First Name: {tempUser.firstName}</li>
+                <li>Last Name: {tempUser.lastName}</li>
+                <li>Timezone: {tempUser.timezone}</li>
             </ul>
 
 
             <div className="grid-col grid-col_4">
-                {/* Buttons below the details to confirm */}
+
                 <div className="button-group">
                     <button className="btn btn_sizeSm" onClick={RegisterForm}>
                         Edit
@@ -46,6 +58,7 @@ function ConfirmYourDetailsPage() {
                     <button className="btn btn_sizeSm" onClick={handleNavigate}>
                         Looks Good!
                     </button>
+
                 </div>
             </div>
         </div>

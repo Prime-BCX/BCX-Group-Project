@@ -18,6 +18,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
+import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
 
 
 function App() {
@@ -94,6 +95,17 @@ function App() {
               <RegisterPage />
             }
           </Route>
+
+          <Route
+            // sends user to confirmation of details
+            exact
+            path="/confirm"
+          >
+            <ConfirmYourDetailsPage/>
+          </Route>
+
+
+
 
           <Route
             exact
