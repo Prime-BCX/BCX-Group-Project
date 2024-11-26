@@ -53,7 +53,7 @@ function ConfirmYourDetailsPage() {
 
                 <div className="button-group">
                     <button className="btn btn_sizeSm" 
-                    onClick={RegisterForm}>
+                    onClick={handleNavigate}>
                         Edit
                     </button>
                     <button className="btn btn_sizeSm" 

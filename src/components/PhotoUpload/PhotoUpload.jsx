@@ -72,7 +72,7 @@ function PhotoUpload() {
 
   return (
     <div>
-      <h2>BCX</h2>
+      <h4>BCX</h4>
       <h4>Phase 1: Build</h4>
       <h1>Start</h1>
 
