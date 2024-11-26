@@ -60,6 +60,7 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
@@ -106,9 +107,6 @@ function App() {
             <ConfirmYourDetailsPage />
           </Route>
 
-
-
-
           <Route
             exact
             path="/home"
@@ -130,21 +128,19 @@ function App() {
         </Switch>
         <Footer />
       </div>
+
+ {/* For Navigation Buttons: / plug into return above */}
+      <Route>
+        <div>
+          <NavigationButtons />
+          <Routes>
+            <Route path="../RegisterPage" element={<RegisterPage />} />
+            <Route path="../PhotoUpload" element={<PhotoUpload />} />
+          </Routes>
+        </div>
+      </Route>
+
     </Router>
   );
-
-  //For Navigation Buttons:
-  return (
-    <SecondRouter>
-      <div>
-        <NavigationButtons />
-        <Routes>
-          <Route path="../RegisterPage" element={<RegisterPage />} />
-          <Route path="../PhotoUpload" element={<PhotoUpload />} />
-        </Routes>
-      </div>
-    </SecondRouter>
-  );
-
 }
 export default App;
