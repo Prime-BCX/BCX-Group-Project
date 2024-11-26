@@ -20,7 +20,6 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
 //For Navigation Buttons:
-import { BrowserRouter as SecondRouter } from 'react-router-dom';
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
 
 function App() {
@@ -121,24 +120,38 @@ function App() {
             }
           </Route>
 
+
+
+
+          {/* For Navigation Buttons: / plug into return above */}
+          <Route>
+            <div>
+              <NavigationButtons />
+              <Routes>
+                <Route path="../RegisterPage" element={<RegisterPage />} />
+                <Route path="../PhotoUpload" element={<PhotoUpload />} />
+              </Routes>
+            </div>
+          </Route>
+
+          <Route>
+            <div>
+              <button
+                onClick={() => history.push('/PhaseOnePage')} // Navigate to PhaseOnePage
+              > START PHASE ONE
+              </button>
+            </div>
+          </Route>
+
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
+          
         </Switch>
         <Footer />
       </div>
-
- {/* For Navigation Buttons: / plug into return above */}
-      <Route>
-        <div>
-          <NavigationButtons />
-          <Routes>
-            <Route path="../RegisterPage" element={<RegisterPage />} />
-            <Route path="../PhotoUpload" element={<PhotoUpload />} />
-          </Routes>
-        </div>
-      </Route>
 
     </Router>
   );
