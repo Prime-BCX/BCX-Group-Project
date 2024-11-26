@@ -52,10 +52,12 @@ function ConfirmYourDetailsPage() {
             <div className="grid-col grid-col_4">
 
                 <div className="button-group">
-                    <button className="btn btn_sizeSm" onClick={RegisterForm}>
+                    <button className="btn btn_sizeSm" 
+                    onClick={RegisterForm}>
                         Edit
                     </button>
-                    <button className="btn btn_sizeSm" onClick={handleNavigate}>
+                    <button className="btn btn_sizeSm" 
+                    onClick={handleNavigate}>
                         Looks Good!
                     </button>
 
