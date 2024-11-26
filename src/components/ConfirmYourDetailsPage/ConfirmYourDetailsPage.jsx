@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ConfirmYourDetailsPage.jsx';
-import RegisterForm from '../RegisterForm/RegisterForm';
 import { useSelector } from 'react-redux';
 import NavigationButtons from '../NavigationButtons/NavigationButtons'; // Adjust the path based on your structure
 

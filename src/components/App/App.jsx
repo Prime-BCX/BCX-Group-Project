@@ -21,6 +21,7 @@ import './App.css';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
 //For Navigation Buttons:
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
+import ButtonToPhase from '../ButtonToPhase/ButtonToPhase';
 
 function App() {
   const dispatch = useDispatch();
@@ -123,7 +124,7 @@ function App() {
 
 
 
-          {/* For Navigation Buttons: / plug into return above */}
+          {/* For Navigation Buttons:   */}
           <Route>
             <div>
               <NavigationButtons />
@@ -134,12 +135,12 @@ function App() {
             </div>
           </Route>
 
+          {/* Navigate to PhaseOnePage */}
           <Route>
             <div>
-              <button
-                onClick={() => history.push('/PhaseOnePage')} // Navigate to PhaseOnePage
-              > START PHASE ONE
-              </button>
+              <ButtonToPhase />
+              <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
+            
             </div>
           </Route>
 
@@ -148,7 +149,7 @@ function App() {
           <Route>
             <h1>404</h1>
           </Route>
-          
+
         </Switch>
         <Footer />
       </div>
