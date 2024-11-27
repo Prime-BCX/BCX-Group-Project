@@ -49,27 +49,32 @@
   text-decoration: none; 
   text-transform: uppercase; 
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #E73C71; 
 }
 
 /* Create Profile Button */
-.create-profile-btn {
+.container .create-profile-btn {
   background-color: #E73C71; 
   color: #ffffff; 
+  border: 2px solid #E73C71; /* Pink border */
+
 }
 
-.create-profile-btn:hover {
+.container .create-profile-btn:hover {
   background-color: #FCE4EC; 
   color: #D32A5D; 
   border: 2px solid #D32A5D; 
 }
 
 /* Login Button */
-.login-btn {
+.container .login-btn {
   background-color: #E73C71; 
   color: #ffffff; 
+  border: 2px solid #E73C71; /* Pink border */
+
 }
 
-.login-btn:hover {
+.container .login-btn:hover {
   background-color: #FCE4EC; 
   color: #D32A5D; 
   border: 2px solid #D32A5D; 
