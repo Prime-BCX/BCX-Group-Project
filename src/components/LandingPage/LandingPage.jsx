@@ -13,7 +13,7 @@ function LandingPage() {
 
   // Handle new profile navigation
   const onCreateProfile = () => {
-    history.push('/create-profile');
+    history.push('/register');
   };
 
   return (
