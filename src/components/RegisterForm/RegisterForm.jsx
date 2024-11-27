@@ -45,15 +45,16 @@ function RegisterForm() {
   };
 
   return (
+    <div className="container">
+    <h2 className="heading">Register User</h2>
     <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
       )}
 
-      <div>
+      <div className="formGroup">
         <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
@@ -65,7 +66,7 @@ function RegisterForm() {
         />
       </div>
 
-      <div>
+      <div className="formGroup">
         <label htmlFor="lastName">Last Name:</label>
         <input
           type="text"
@@ -77,7 +78,7 @@ function RegisterForm() {
         />
       </div>
 
-      <div>
+      <div className="formGroup">
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -88,7 +89,7 @@ function RegisterForm() {
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-      <div>
+      <div className="formGroup">
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -99,7 +100,7 @@ function RegisterForm() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      {/* <div>
+      <div className="formhGroup">
         <label htmlFor="timezone">Timezone:</label>
         <div className="dropdown">
           <button 
@@ -120,35 +121,10 @@ function RegisterForm() {
                 <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
               </ul>
             </div>
+            
           )}
         </div>
-      </div> */}
-
-<div className="label-dropdown-container">
-  <label htmlFor="timezone">Timezone:</label>
-  <div className="dropdown">
-    <button 
-      type="button" 
-      onClick={toggleDropdown} 
-      className="dropbtn"
-      aria-haspopup="true"
-      aria-expanded={dropdownOpen ? "true" : "false"}
-    >
-      {timezone || 'Select Timezone'}
-    </button>
-    {dropdownOpen && (
-      <div className="dropdown-content">
-        <ul>
-          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
-          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('EST'); }}>EST</a></li>
-          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
-          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
-        </ul>
       </div>
-    )}
-  </div>
-</div>
-
 
       <div>
         <input 
@@ -159,7 +135,8 @@ function RegisterForm() {
         />
       </div>
     </form>
-  );
-}
+    </div>
+
+  )};
 
 export default RegisterForm;

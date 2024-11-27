@@ -1,17 +1,18 @@
-.user-profile {
-  font-family: Arial, sans-serif;
+.container {
+  font-family: 'Montserrat', sans-serif; /* Matching font style */
   text-align: center;
   margin: 0 auto;
   padding: 20px;
-  max-width: 320px;
-  border-radius: 20px;
-  background-color: #ffffff; /* White */
+  max-width: 800px;
+  background-color: #ffffff; /* White background */
 }
 
-h2 {
-  font-size: 20px;
+.heading {
+  font-size: 36px; /* Larger, bold heading */
+  color: #282E68; /* Dark Blue */
   margin-bottom: 20px;
-  color: #2c2c2c; /* Dark Gray */
+  font-weight: 700;
+  text-transform: uppercase; /* Uppercase text */
 }
 
 .formPanel {
@@ -21,60 +22,63 @@ h2 {
   gap: 20px;
 }
 
+.formGroup, .formhGroup  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  position: relative; /* Ensure dropdown aligns correctly */
+  margin-bottom: 20px;
+
+}
+
 label {
-  text-align: left;
-  font-size: 14px;
-  margin-bottom: 5px;
-  display: block;
-  width: 100%;
-  color: #2c2c2c; 
+  flex: 1;
+  font-size: 16px;
+  color: #E73C71; /* Vibrant pink */
+  text-align: right;
+  margin-right: 20px;
+  white-space: nowrap;
+
 }
 
-input {
+input,
+.dropbtn {
+  flex: 2;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #d1d1d1; /* Light Gray */
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #282E68; /* Dark Blue */
   width: 100%;
-  max-width: 280px;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 2px solid #d1d1d1; /* Light Gray */
-  background-color: transparent;
-  text-align: left;
-  color: #2c2c2c; /* Dark Gray */
+
 }
 
-input:focus {
-  border-bottom: 2px solid #6b5b95; /* Purple */
+input:focus,
+.dropbtn:focus {
+  border-color: #E73C71; /* Pink */
   outline: none;
 }
 
-/* Dropdown Button */
 .dropbtn {
-  background-color: white;
-  color: #2c2c2c; /* Dark Gray */
-  padding: 10px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 2px solid #d1d1d1; /* Light Gray */
-  text-align: left;
-  width: 100%;
-  max-width: 280px;
   cursor: pointer;
-}
-
-.dropbtn:hover {
-  background-color: #f7f7f7; /* Very Light Gray */
+  text-align: left;
+  width: 100%; /* Ensure full width matches input fields */
 }
 
 .dropdown-content {
   position: absolute;
-  background-color: white;
-  width: 100%;
-  max-width: 280px;
+  top: calc(100% + 5px); /* Position dropdown below button */
+  left: 0; /* Align dropdown with the button */
+  background-color: #ffffff;
+  width: 100%; /* Match width of the button */
   border: 1px solid #e0e0e0; /* Light Border */
   border-radius: 5px;
   z-index: 1;
   text-align: left;
-  margin-top: 5px;
+  margin: 0; /* Remove extra margin */
   padding: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -90,7 +94,7 @@ input:focus {
   cursor: pointer;
   font-size: 14px;
   border-bottom: 1px solid #f2f2f2;
-  color: #2c2c2c; /* Dark Gray */
+  color: #282E68; /* Dark Blue */
 }
 
 .dropdown-content li:last-child {
@@ -98,81 +102,43 @@ input:focus {
 }
 
 .dropdown-content li:hover {
-  background-color: #e8e8ff; /* Light Purple */
+  background-color: #FCE4EC; /* Light Pink */
 }
 
-/* Button Group */
-.btn,
-.link-btn {
-  margin: 5px 0;
-  padding: 12px 20px;
-  font-size: 14px;
+.butn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 700; /* Bold font */
   border: none;
-  color: #6b5b95; /* Purple */
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer;
-  text-align: center;
-  text-decoration: underline;
-  font-weight: bold;
+  width: 220px; /* Consistent button size */
+  text-decoration: none; /* No underline */
+  text-transform: uppercase; /* Uppercase text */
+  background-color: #E73C71; /* Vibrant pink */
+  color: #ffffff; /* White text */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.link-btn {
-  background: none;
+.butn:hover {
+  background-color: #FCE4EC; /* Light Pink */
+  color: #D32A5D; /* Darker pink text */
+  border: 2px solid #D32A5D; /* Border on hover */
 }
 
-.link-btn:hover {
-  color: #4b3d73; /* Darker Purple */
+
+.dropdown {
+  flex: 2.2;
+  position: relative;
+} 
+
+
+.dropdown-content li a {
   text-decoration: none;
-}
-
-.btn {
-  background-color: #6b5b95; /* Purple */
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-}
-
-.btn:hover {
-  background-color: #5a4a85; /* Darker Purple */
-}
-
-.btn:active {
-  background-color: #4b3d73; /* Even Darker Purple */
-}
-
-/* Notes Section (if applicable for additional styles) */
-.notes {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fdf4ff; /* Very Light Purple */
-  color: #6b5b95; /* Purple */
-  border-radius: 10px;
-  text-align: left;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-
-/* Container for label and dropdown */
-.label-dropdown-container {
-  display: flex;
-  align-items: center; /* Align label and dropdown vertically */
-  justify-content: space-between;
+  display: block; /* Make the link fill the entire li area */
   width: 100%;
-  max-width: 280px;
+  height: 100%;
+  color: inherit; /* Inherit the li color */
 }
 
-label {
-  flex: 1;
-  font-size: 14px;
-  margin-bottom: 0;
-  color: #2c2c2c; /* Dark Gray */
-}
 
-.dropbtn {
-  flex: 2; /* Adjust dropdown width */
-  margin-left: 10px; /* Add spacing between label and dropdown */
-  padding: 8px; /* Match input padding */
-  font-size: 14px; /* Match input font size */
-  
-}
