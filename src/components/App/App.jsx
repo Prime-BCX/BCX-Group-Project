@@ -21,7 +21,7 @@ import './App.css';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
 //For Navigation Buttons:
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
-import ButtonToPhase from '../ButtonToPhase/ButtonToPhase';
+import ButtonToGo from '../ButtonToGo/ButtonToGo';
 
 function App() {
   const dispatch = useDispatch();
@@ -138,7 +138,7 @@ function App() {
           {/* Navigate to PhaseOnePage */}
           <Route>
             <div>
-              <ButtonToPhase />
+              <ButtonToGo />
               <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
             
             </div>
