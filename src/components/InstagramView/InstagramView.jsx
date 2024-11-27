@@ -1,17 +1,18 @@
 // This view promotes the use of Instagram to share the user's progress.
-import image from '.../images/BCX_and_Instagram.jpeg';
+import ButtonToPhase from '../ButtonToPhase/ButtonToPhase';
+import image from './images/BCX_and_Instagram.jpeg';
 
-<container>
+<div>
 <h2>
     Easily share you progress to
     Instagram Stories
     straight from the app!
 </h2>
 
-<img src={BCX_and_Instagram.jpeg} alt="BCX and Instagram" />
+<img src={image} alt="BCX and Instagram" />
 
+<ButtonToPhase />
 
+</div>
 
-</container>
-
-
+export default InstagramView;
