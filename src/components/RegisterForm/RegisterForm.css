@@ -1,174 +1,3 @@
-/* Dropdown Button
-.dropbtn {
-    background-color: white;
-    color: #150d0d;
-    padding: 5px;
-    font-size: 12px;
-    border: solid black;
-    cursor: pointer;
-    width:40%;
-  }
-  
-  .dropdown-content {
-    display: block;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 60px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1;}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  ul { 
-
-    list-style-type: none;
-  
-  } 
-   */
-
-
-/* 
-
-   .user-profile {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 320px;
-  border-radius: 20px;
-}
-
-h2 {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: black;
-}
-
-.formPanel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-label {
-  text-align: left;
-  font-size: 14px;
-  margin-bottom: 5px;
-  display: block;
-  width: 100%;
-}
-
-input {
-  width: 100%;
-  max-width: 280px;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 1px solid black;
-  background-color: transparent;
-  text-align: left;
-}
-
-.dropbtn {
-  background-color: white;
-  color: #000;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 1px solid black;
-  text-align: left;
-  width: 100%;
-  max-width: 280px;
-  cursor: pointer;
-}
-
-.dropbtn:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown-content {
-  position: absolute;
-  background-color: white;
-  width: 100%;
-  max-width: 280px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 1;
-  text-align: left;
-  margin-top: 5px;
-  padding: 0;
-}
-
-.dropdown-content ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-content li {
-  padding: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  border-bottom: 1px solid #ccc;
-}
-
-.dropdown-content li:last-child {
-  border-bottom: none;
-}
-
-.dropdown-content li:hover {
-  background-color: #f1f1f1;
-}
-
-.btn,
-.link-btn {
-  margin: 5px 0;
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  background: none;
-  color: black;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: underline;
-}
-
-.link-btn {
-  background: none;
-}
-
-.link-btn:hover {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.btn {
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: transparent;
-}
-
-.btn:hover {
-  background-color: #f1f1f1;
-} */
-
-
-
-
-/* General Styles */
 .user-profile {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -198,7 +27,7 @@ label {
   margin-bottom: 5px;
   display: block;
   width: 100%;
-  color: #2c2c2c; /* Dark Gray */
+  color: #2c2c2c; 
 }
 
 input {
@@ -321,4 +150,29 @@ input:focus {
   text-align: left;
   font-size: 14px;
   line-height: 1.5;
+}
+
+
+/* Container for label and dropdown */
+.label-dropdown-container {
+  display: flex;
+  align-items: center; /* Align label and dropdown vertically */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 280px;
+}
+
+label {
+  flex: 1;
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #2c2c2c; /* Dark Gray */
+}
+
+.dropbtn {
+  flex: 2; /* Adjust dropdown width */
+  margin-left: 10px; /* Add spacing between label and dropdown */
+  padding: 8px; /* Match input padding */
+  font-size: 14px; /* Match input font size */
+  
 }

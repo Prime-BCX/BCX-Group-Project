@@ -54,18 +54,6 @@ function RegisterForm() {
       )}
 
       <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          required
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </div>
-
-      <div>
         <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
@@ -90,6 +78,28 @@ function RegisterForm() {
       </div>
 
       <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          required
+          onChange={(event) => setEmail(event.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          required
+          onChange={(event) => setPassword(event.target.value)}
+        />
+      </div>
+      {/* <div>
         <label htmlFor="timezone">Timezone:</label>
         <div className="dropdown">
           <button 
@@ -112,19 +122,33 @@ function RegisterForm() {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
 
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          required
-          onChange={(event) => setPassword(event.target.value)}
-        />
+<div className="label-dropdown-container">
+  <label htmlFor="timezone">Timezone:</label>
+  <div className="dropdown">
+    <button 
+      type="button" 
+      onClick={toggleDropdown} 
+      className="dropbtn"
+      aria-haspopup="true"
+      aria-expanded={dropdownOpen ? "true" : "false"}
+    >
+      {timezone || 'Select Timezone'}
+    </button>
+    {dropdownOpen && (
+      <div className="dropdown-content">
+        <ul>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('EST'); }}>EST</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
+        </ul>
       </div>
+    )}
+  </div>
+</div>
+
 
       <div>
         <input 
