@@ -128,7 +128,7 @@ function RegisterForm() {
 
       <div>
         <input 
-          className="btn" 
+          className="butn" 
           type="submit" 
           name="submit" 
           value="Register" 
