@@ -1,5 +1,7 @@
 // This view promotes the use of Instagram to share the user's progress.
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
+// Declare label and path variables directly inline as props.
+// In this file - see line 16 <ButtonToGo...
 import image from './images/BCX_and_Instagram.jpeg';
 
 <div>
@@ -11,7 +13,7 @@ import image from './images/BCX_and_Instagram.jpeg';
 
 <img src={image} alt="BCX and Instagram" />
 
-<ButtonToGo />
+<ButtonToGo label="START PHASE ONE" path="../PhaseOnePage"/>
 
 </div>
 
