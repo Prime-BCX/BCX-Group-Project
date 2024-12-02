@@ -17,6 +17,7 @@ import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import BCXDayScreen from '../BCXDayScreen/BCXDayScreen'; 
 import './App.css';
 
 
@@ -65,6 +66,12 @@ function App() {
             <PhotoUpload />
           </ProtectedRoute>
 
+          <Route
+            exact
+            path="/bcx-day-screen"
+          >
+            <BCXDayScreen />
+          </Route>
           
 
           <Route
