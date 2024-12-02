@@ -18,6 +18,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
+import ChecklistPage from '../ChecklistPage/ChecklistPage';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
 //For Navigation Buttons:
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
@@ -126,6 +127,14 @@ function App() {
               // Otherwise, show the Landing page
               <LandingPage />
             }
+          </Route>
+          {//TODO: add authentication; left out for testing
+          }
+          <Route
+            exact
+            path ="/main"
+          >
+            <ChecklistPage />
           </Route>
 
 
