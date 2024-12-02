@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import VideoLauncher from '../VideoLauncher/VideoLauncher';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -17,6 +18,7 @@ import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
@@ -64,13 +66,33 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
+            // logged in shows InfoPage else shows LoginPage
             exact
             path="/PhotoUpload/:id"
           >
-            <PhotoUpload />
+            <PhotoUpload/>
+          </ProtectedRoute>   
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/EndOfStepView"
+          >
+            <EndOfStepView/>
+          </ProtectedRoute>   
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/VideoPlayer"
+          >
+            <VideoPlayer/>
           </ProtectedRoute>
-
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/VideoLauncher"
+          >
+            <VideoLauncher/>
+          </ProtectedRoute>
           {/* <ProtectedRoute
             // temporary to view
             exact
