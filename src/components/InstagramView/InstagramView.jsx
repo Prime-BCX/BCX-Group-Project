@@ -2,7 +2,7 @@
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
 // Declare label and path variables directly inline as props.
 // In this file - see line 16 <ButtonToGo...
-import image from './images/BCX_and_Instagram.jpeg';
+// import image from './images/BCX_and_Instagram.jpeg';
 
 
 
@@ -15,7 +15,7 @@ function InstagramView() {
                 straight from the app!
             </h2>
 
-            <img src={image} alt="BCX and Instagram" />
+            {/* <img src={image} alt="BCX and Instagram" /> */}
 
             <ButtonToGo label="START PHASE ONE" path="../PhaseOnePage" />
 
