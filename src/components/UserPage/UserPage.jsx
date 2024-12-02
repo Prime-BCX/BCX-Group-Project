@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import LogOutButton from '../LogOutButton/LogOutButton';
 
+
 function UserPage() {
   // Access user info from the Redux store
   const user = useSelector((store) => store.user);  

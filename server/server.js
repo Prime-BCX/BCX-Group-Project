@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');  // Import the CORS middleware
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 5001;
@@ -9,13 +10,23 @@ const passport = require('./strategies/user.strategy');
 
 // Route Includes
 const userRouter = require('./routes/user.router');
-const userProgress =require('./routes/userprogress.router')
-const userImage = require('./routes/userimage.router');  
+const userProgress = require('./routes/userprogress.router');
+const userImage = require('./routes/userimage.router');
+const phasesRouter = require('./routes/phases.router');  
 
+// Enable CORS middleware before your routes
+const corsOptions = {
+  origin: 'http://localhost:5173',  // This is your frontend URL
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+// Use CORS middleware globally for all routes
+app.use(cors(corsOptions));
 
 // Express Middleware
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 // Passport Session Configuration
@@ -27,26 +38,11 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/user', userRouter);
-app.use('/api/userprogress',userProgress);
-app.use('/api/userImage', userImage );
+app.use('/api/userprogress', userProgress);
+app.use('/api/userImage', userImage);
+app.use('/api/phases', phasesRouter);
 
-// Listen Server & Port
+// Start the server
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
-
-//For S3 CORS
-const cors = require('cors');
-
-// Allow requests from the frontend (localhost:5173)
-app.use(cors({
-  origin: 'http://localhost:5173',  // Change this to match your frontend's URL
-  methods: ['GET', 'POST'],    //Allow GET and POST methods
-  allowedHeaders: ['Content-Type', 'Authorization']    
-}));
-
-const uploadRouter = require('./routes/uploadfile.router.js');
-app.use('/upload',uploadRouter );  // Use the route /upload for file uploads  
-
-// Register your route
-app.use('/api', uploadRouter);

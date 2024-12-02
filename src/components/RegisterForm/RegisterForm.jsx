@@ -58,10 +58,10 @@ function RegisterForm() {
 
   // Toggle dropdown visibility
   const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev);
+    setDropdownOpen(!dropdownOpen);
   };
 
-  // Handle timezone selection from dropdown
+
   const handleTimezoneSelect = (timezone) => {
     setTimezone(timezone);
     setDropdownOpen(false); // Close the dropdown after selection
@@ -125,9 +125,8 @@ function RegisterForm() {
           <button 
             type="button" 
             onClick={toggleDropdown} 
-            className="dropbtn"
-            aria-haspopup="true"
-            aria-expanded={dropdownOpen ? "true" : "false"}
+            className="dropbtn"  
+        
           >
             {timezone || 'Select Timezone'}
           </button>
