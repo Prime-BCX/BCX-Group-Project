@@ -6,14 +6,16 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'; //this is being used because React 5.3.4 is in use
 // React 6.0 is required to import { useNavigate } from 'react-router-dom'; 
-import './ButtonToGo.css'; 
+import './ButtonToGo.css/'; 
 
 function ButtonToGo({ label, path }) {
     const history = useHistory();
 
     return (
         <div>
-            <button onClick={() => history.push(path)}>
+            <button 
+            className="btn-to-go"
+            onClick={() => history.push(path)}>
                 {label}
             </button>
         </div>
