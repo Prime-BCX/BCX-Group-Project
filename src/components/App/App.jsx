@@ -10,18 +10,20 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
+import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
+//For Navigation Buttons:
+import NavigationButtons from '../NavigationButtons/NavigationButtons';
+import ButtonToGo from '../ButtonToGo/ButtonToGo';
+import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
 
 function App() {
   const dispatch = useDispatch();
@@ -62,12 +64,20 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows UserPage else shows LoginPage
             exact
-            path="/info"
+            path="/PhotoUpload/:id"
           >
-            <InfoPage />
+            <PhotoUpload />
           </ProtectedRoute>
+
+          {/* <ProtectedRoute
+            // temporary to view
+            exact
+            path="/src/components/MissedDayView"
+          >
+            <MissedDayView />
+          </ProtectedRoute> */}
 
           <Route
             exact
@@ -98,6 +108,14 @@ function App() {
           </Route>
 
           <Route
+            // sends user to confirmation of details
+            exact
+            path="/confirm"
+          >
+            <ConfirmYourDetailsPage />
+          </Route>
+
+          <Route
             exact
             path="/home"
           >
@@ -119,15 +137,38 @@ function App() {
             <ChecklistPage />
           </Route>
 
+
+
+
+          {/* For Navigation Buttons:   */}
+          <Route>
+            <div>
+              <NavigationButtons />
+                <Route path="../RegisterPage" element={<RegisterPage />} />
+                <Route path="../PhotoUpload" element={<PhotoUpload />} />
+            </div>
+          </Route>
+
+          {/* Navigate to PhaseOnePage */}
+          <Route>
+            <div>
+              <ButtonToGo />
+              <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
+            
+            </div>
+          </Route>
+
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
+
         </Switch>
         <Footer />
       </div>
+
     </Router>
   );
 }
-
 export default App;
