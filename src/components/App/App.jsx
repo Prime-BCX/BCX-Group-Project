@@ -45,6 +45,8 @@ function App() {
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:5173/about will show the about page. */}
+
+          {/* About Page */}
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
@@ -57,6 +59,8 @@ function App() {
             Visiting localhost:5173/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
             Even though it seems like they are different pages, the user is always on localhost:5173/user */}
+
+          {/* User Page */}
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
@@ -65,42 +69,45 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
+          {/* Photo Upload */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/PhotoUpload/:id"
           >
-            <PhotoUpload/>
-          </ProtectedRoute>   
+            <PhotoUpload />
+          </ProtectedRoute>
+
+          {/* End of Step */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/EndOfStepView"
           >
-            <EndOfStepView/>
-          </ProtectedRoute>   
+            <EndOfStepView />
+          </ProtectedRoute>
+
+          {/* Video Player */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/VideoPlayer"
           >
-            <VideoPlayer/>
+            <VideoPlayer />
           </ProtectedRoute>
+
+          {/* Video Launcher */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/VideoLauncher"
           >
-            <VideoLauncher/>
+            <VideoLauncher />
           </ProtectedRoute>
-          {/* <ProtectedRoute
-            // temporary to view
-            exact
-            path="/src/components/MissedDayView"
-          >
-            <MissedDayView />
-          </ProtectedRoute> */}
 
+
+
+          {/* Login */}
           <Route
             exact
             path="/login"
@@ -115,6 +122,7 @@ function App() {
             }
           </Route>
 
+          {/* Registration */}
           <Route
             exact
             path="/registration"
@@ -129,14 +137,56 @@ function App() {
             }
           </Route>
 
+          {/* ConfirmYourDetailsPage */}
           <Route
             // sends user to confirmation of details
             exact
-            path="/confirm"
+            path="/ConfirmYourDetailsPage"
           >
             <ConfirmYourDetailsPage />
           </Route>
 
+          {/* DoNotCheatYourself */}
+          <ProtectedRoute
+            exact
+            path="/DoNotCheatYourself"
+          >
+            <DoNotCheatYourself />
+          </ProtectedRoute>
+
+          {/* InstagramView */}
+          <ProtectedRoute
+            exact
+            path="/InstagramView"
+          >
+            <InstagramView />
+          </ProtectedRoute>
+
+          {/* MissedDayView */}
+          <ProtectedRoute
+            exact
+            path="/MissedDayView"
+          >
+            <MissedDayView />
+          </ProtectedRoute>
+
+          {/* RepeatOrRestart */}
+          <ProtectedRoute
+            exact
+            path="/RepeatOrRestart"
+          >
+            <RepeatOrRestart />
+          </ProtectedRoute>
+
+          {/* ShowingIntegrity */}
+          <ProtectedRoute
+            exact
+            path="/ShowingIntegrity"
+          >
+            <ShowingIntegrity />
+          </ProtectedRoute>
+
+          {/* Home Page */}
           <Route
             exact
             path="/home"
@@ -150,24 +200,24 @@ function App() {
               <LandingPage />
             }
           </Route>
+
           {//TODO: add authentication; left out for testing
           }
+
+          {/* Checklist Page */}
           <Route
             exact
-            path ="/main"
+            path="/main"
           >
             <ChecklistPage />
           </Route>
-
-
-
 
           {/* For Navigation Buttons:   */}
           <Route>
             <div>
               <NavigationButtons />
-                <Route path="../RegisterPage" element={<RegisterPage />} />
-                <Route path="../PhotoUpload" element={<PhotoUpload />} />
+              <Route path="../RegisterPage" element={<RegisterPage />} />
+              <Route path="../PhotoUpload" element={<PhotoUpload />} />
             </div>
           </Route>
 
@@ -176,7 +226,7 @@ function App() {
             <div>
               <ButtonToGo />
               <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
-            
+
             </div>
           </Route>
 
