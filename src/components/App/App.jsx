@@ -105,8 +105,6 @@ function App() {
             <VideoLauncher />
           </ProtectedRoute>
 
-
-
           {/* Login */}
           <Route
             exact
