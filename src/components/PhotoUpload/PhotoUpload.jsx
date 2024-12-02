@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import './PhotoUpload.css';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom"; 
+import ProgressBar from '../ProgressBar/ProgressBar';  // Import the ProgressBar component
 
 function PhotoUpload() {
   const progressList = useSelector((store) => store.userProgressReducer.progress);
+  const [isComplete, setIsComplete] = useState(false);
   const dispatch = useDispatch(); 
   const { id } = useParams(); 
-
-  console.log('User ID is:', id);
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);  // State to store the selected photo
 
@@ -23,7 +23,6 @@ function PhotoUpload() {
       setSelectedPhoto(file);
     }
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,42 +42,43 @@ function PhotoUpload() {
         method: "POST",
         body: formData,
       })
-      
       .then((response) => response.json())
       .then((data) => {
         console.log("Upload successful:", data.fileUrl);
         alert("Photo uploaded successfully!");
         
         // Now that the Photo is uploaded to S3, lets also add the Initial Photo URL to userImage table
+        dispatch({
+          type: 'SET_INITIAL_IMAGE',
+          payload: {
+            user_id: id,
+            initial_photo: data.fileUrl,
+          },
+// Navigate
 
-        
-            dispatch({
-            type: 'SET_INITIAL_IMAGE',
-            payload: {
-                user_id: id,
-                initial_photo: data.fileUrl,
-              },
-          });
-        
-
-
+        });
       })
-    
       .catch((error) => {
         console.error("Error uploading photo:", error);
         alert("Failed to upload photo.");
       });
   };
 
+  const handleComplete = (event) => {
+    event.preventDefault();
+    setIsComplete(!isComplete);
+  };
+
   return (
     <div>
-      <h2>BCX</h2>
+      <h4>BCX</h4>
       <h4>Phase 1: Build</h4>
       <h1>Start</h1>
 
       <div className="photo-upload-container">
         <h3>Start Building Your Best Self</h3>
-        <p>Your journey to empowerment, confidence, and strength begins now. Every step builds the foundation of the woman you're becoming. Submit your photo now, and don't forget to snap tomorrow's first thing in the morning. This is your time to take ownership—let's go.</p>
+        <p>Your journey to empowerment, confidence, and strength begins now. Every step builds the foundation of the woman you're becoming.
+           Submit your photo now, and don't forget to snap tomorrow's first thing in the morning. This is your time to take ownership—let's go.</p>
 
         {/* Form to select and upload photo */}
         <form onSubmit={handleSubmit}>
@@ -94,13 +94,12 @@ function PhotoUpload() {
         </form>
       </div>
 
-      <div>
+      <div className="progress-container" onChange={handleComplete}>          
         {progressList.map((item) => (
           <div key={item.user_id}>
-            <p>User ID: {item.user_id}</p>
-            <p>Step: {item.step}</p>
-            <p>Progress: {item.progress}</p>
-            <p>Timestamp: {item.timestamp}</p>
+        
+            
+            <ProgressBar value={item.step} />
           </div>
         ))}
       </div>

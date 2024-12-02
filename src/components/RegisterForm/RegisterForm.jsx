@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './RegisterForm.css';
 
@@ -8,22 +9,22 @@ function RegisterForm() {
   const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [timezone, setTimezone] = useState('');
-  const [dropdownOpen, setDropdownOpen] = useState(false); 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
-  // Handle form submission
-  const registerUser = (event) => {
+  // // Handle form submission
+  const setTempUser = (event) => {
     event.preventDefault(); // Prevent form submission from causing page reload or redirect
 
     // Only dispatch the registration action if all required fields are filled
     if (email && firstName && lastName && password && timezone) {
       dispatch({
-        type: 'REGISTER',
+        type: 'SET_TEMP_USER',
         payload: {
           email: email,
-          first_name: firstName,
-          last_name: lastName,
+          firstName: firstName,
+          lastName: lastName,
           password: password,
           timezone: timezone,
         },
@@ -33,21 +34,49 @@ function RegisterForm() {
     }
   };
 
+
+  // // // Handle form submission
+  // const registerUser = (event) => {
+  //   event.preventDefault(); // Prevent form submission from causing page reload or redirect
+
+  //   // Only dispatch the registration action if all required fields are filled
+  //   if (email && firstName && lastName && password && timezone) {
+  //     dispatch({
+  //       type: 'REGISTER',
+  //       payload: {
+  //         email: email,
+  //         first_name: firstName,
+  //         last_name: lastName,
+  //         password: password,
+  //         timezone: timezone,
+  //       },
+  //     });
+  //   } else {
+  //     console.log("Form is not complete");
+  //   }
+  // };
+
   // Toggle dropdown visibility
   const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev);
+    setDropdownOpen(!dropdownOpen);
   };
 
-  // Handle timezone selection from dropdown
+
   const handleTimezoneSelect = (timezone) => {
     setTimezone(timezone);
     setDropdownOpen(false); // Close the dropdown after selection
   };
 
+  const history = useHistory();
+  const handleNavigate = (event) => {
+    setTempUser(event)
+    { history.push('/confirm') }
+  }
+
   return (
     <div className="container">
-    <h2 className="heading">Register User</h2>
-    <form className="formPanel" onSubmit={registerUser}>
+   <form className="formPanel" onSubmit={handleNavigate}>
+      <h2 className="heading">Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
@@ -106,12 +135,12 @@ function RegisterForm() {
           <button 
             type="button" 
             onClick={toggleDropdown} 
-            className="dropbtn"
-            aria-haspopup="true"
-            aria-expanded={dropdownOpen ? "true" : "false"}
+            className="dropbtn"  
+        
           >
             {timezone || 'Select Timezone'}
           </button>
+
           {dropdownOpen && (
             <div className="dropdown-content">
               <ul>
@@ -127,15 +156,15 @@ function RegisterForm() {
       </div>
 
       <div>
-        <input 
-          className="butn" 
-          type="submit" 
-          name="submit" 
-          value="Register" 
-        />
+        <button
+          className="butn"
+          type="submit"
+          name="submit"
+          value="Register">Submit</button>
       </div>
     </form>
     </div>
+
 
   )};
 
