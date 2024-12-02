@@ -74,6 +74,7 @@ function RegisterForm() {
   }
 
   return (
+
     <form className="formPanel" onSubmit={handleNavigate}  >
       <h2>Register User</h2>
       {errors.registrationMessage && (

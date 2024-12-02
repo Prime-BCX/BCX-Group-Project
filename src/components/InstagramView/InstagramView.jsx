@@ -4,17 +4,24 @@ import ButtonToGo from '../ButtonToGo/ButtonToGo';
 // In this file - see line 16 <ButtonToGo...
 import image from './images/BCX_and_Instagram.jpeg';
 
-<div>
-<h2>
-    Easily share you progress to
-    Instagram Stories
-    straight from the app!
-</h2>
 
-<img src={image} alt="BCX and Instagram" />
 
-<ButtonToGo label="START PHASE ONE" path="../PhaseOnePage"/>
+function InstagramView() {
+    return (
+        <div className="container">
+            <h2>
+                Easily share you progress to
+                Instagram Stories
+                straight from the app!
+            </h2>
 
-</div>
+            <img src={image} alt="BCX and Instagram" />
+
+            <ButtonToGo label="START PHASE ONE" path="../PhaseOnePage" />
+
+        </div>
+
+    )
+}
 
 export default InstagramView;

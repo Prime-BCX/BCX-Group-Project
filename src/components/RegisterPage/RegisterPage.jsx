@@ -7,7 +7,7 @@ function RegisterPage() {
   const history = useHistory();
 // console.log ("Hit registration")
   return (
-    <div>
+    <div className="container">
       <RegisterForm />
 
       <center>
