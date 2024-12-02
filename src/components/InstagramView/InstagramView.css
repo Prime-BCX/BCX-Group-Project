@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     background-color: #1e3a8a; /* Blue background */
-    color: white; /* White text */
+    color: #ffffff; /* White-ish text */
     padding: 20px;
     height: 200px;
     width: 300px;
@@ -17,8 +17,8 @@
   
   /* Button styles */
   .submit-button {
-    background-color: #ec4899; /* Pink button */
-    color: white;
+    background-color: #da3993; /* Pink button */
+    color: #ffffff;
     border: none;
     padding: 15px 30px;
     font-size: 14px;
@@ -30,7 +30,7 @@
   }
   
   .submit-button:hover {
-    background-color: #d81b60; /* Darker pink on hover */
+    background-color: #da3993; /* Darker pink on hover */
   }
   
   /* Text styling */
@@ -39,11 +39,11 @@
     margin-left: 400px;
   }
   h4{
-    color: #0e2a78;
+    color: #4853d4;
     font-size: 20px;
   }
   h1{
-    color:rgb(81, 61, 236);
+    color: #4853d4;
     font-size: 50px;
   }
   h3{

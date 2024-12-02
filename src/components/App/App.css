@@ -29,11 +29,11 @@ Button
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: #333334;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
-  color: #f8f8f8;
+  background-color: #da3993;
+  color: #f8dfe5;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
@@ -55,7 +55,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #ca3e63;
   text-decoration: none;
 }
 
@@ -63,17 +63,17 @@ Button
 .btn_asLink {
   padding: 0;
   border-width: 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #333334;
   border-radius: 0;
   background: none;
   font: inherit;
-  color: #444;
+  color: #ffffff;
 }
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #333334;
+  color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------------
@@ -84,10 +84,10 @@ Alert
   box-sizing: border-box;
   padding: 15px 10px;
   margin: 15px 0;
-  border: 2px solid #e01616;
-  background-color: #efefef;
+  border: 2px solid #ca3e63;
+  background-color: #163b8b;
   border-radius: 3px;
-  color: #e01616;
+  color: #ffffff;
   font-size: 0.8rem;
 }
 
@@ -101,7 +101,8 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: #163b8b;
+  color: #ffffff;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
@@ -109,4 +110,27 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.bcxPallet {
+color: #163b8b;
+color: #333334;
+color: #363d8e;
+color: #4853d4;
+color: #7f85d1;
+color: #ca3e63;
+color: #cae4f3;
+color: #cccccc;
+color: #da3993;
+color: #f6a7cd;
+color: #f8dfe5;
+color: #faf8f5;
+color: #fdfcfb;
+color: #ffffff;
+
+
+
+
+
+
 }

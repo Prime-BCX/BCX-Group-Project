@@ -22,6 +22,7 @@ import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetails
 //For Navigation Buttons:
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
+import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
 
 function App() {
   const dispatch = useDispatch();
@@ -69,7 +70,13 @@ function App() {
             <PhotoUpload />
           </ProtectedRoute>
 
-
+          {/* <ProtectedRoute
+            // temporary to view
+            exact
+            path="/src/components/MissedDayView"
+          >
+            <MissedDayView />
+          </ProtectedRoute> */}
 
           <Route
             exact
@@ -128,10 +135,8 @@ function App() {
           <Route>
             <div>
               <NavigationButtons />
-              <Routes>
                 <Route path="../RegisterPage" element={<RegisterPage />} />
                 <Route path="../PhotoUpload" element={<PhotoUpload />} />
-              </Routes>
             </div>
           </Route>
 
