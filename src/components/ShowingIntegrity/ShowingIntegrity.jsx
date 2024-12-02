@@ -1,7 +1,6 @@
-import ButtonToGo from '../ButtonToGo';
-import image from './fadedRandomDayImage.jpeg';
+import ButtonToGo from '../ButtonToGo/ButtonToGo';
 
-function MissedDayView() {
+function ShowingIntegrity() {
     return (
 
         <div className="container">
@@ -9,12 +8,12 @@ function MissedDayView() {
             <p> Starting over takes strength. You're showing integrity and taking ownership of your journey - this is what real progress looks like. Keep going with purpose.
             </p>
 
-            <img src={image} alt="Faded Random Day Image" />
+            <img src="../../Images/MissedDayImage.jpeg" alt="Faded Random Day Image" />
 
-            <ButtonToGo label="OOPS! I DID FINISH" path="../___________" />
-            <ButtonToGo label="START OVER" path="../___________" />
+            <ButtonToGo label="OOPS! I DID FINISH" path="../ChecklistComponents__" />
+            <ButtonToGo label="START OVER" path="../ChecklistComponents__" />
 
         </div>
     )
 }
-export default MissedDayView;
+export default ShowingIntegrity;

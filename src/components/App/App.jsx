@@ -12,7 +12,15 @@ import VideoLauncher from '../VideoLauncher/VideoLauncher';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+
 import AboutPage from '../AboutPage/AboutPage';
+import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
+import DoNotCheatYourself from '../DoNotCheatYourself/DoNotCheatYourself';
+import InstagramView from '../InstagramView/InstagramView';
+import MissedDayView from '../MissedDayView/MissedDayView';
+import RepeatOrRestart from '..RepeatOrRestart/RepeatOrRestart';
+import ShowingIntegrity from '../ShowingIntegrity/ShowingIntegrity';
+
 import UserPage from '../UserPage/UserPage';
 import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
@@ -21,7 +29,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
-import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
+
 //For Navigation Buttons:
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
