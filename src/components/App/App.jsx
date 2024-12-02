@@ -18,7 +18,7 @@ import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetails
 import DoNotCheatYourself from '../DoNotCheatYourself/DoNotCheatYourself';
 import InstagramView from '../InstagramView/InstagramView';
 import MissedDayView from '../MissedDayView/MissedDayView';
-import RepeatOrRestart from '..RepeatOrRestart/RepeatOrRestart';
+import RepeatOrRestart from '../RepeatOrRestart/RepeatOrRestart';
 import ShowingIntegrity from '../ShowingIntegrity/ShowingIntegrity';
 
 import UserPage from '../UserPage/UserPage';

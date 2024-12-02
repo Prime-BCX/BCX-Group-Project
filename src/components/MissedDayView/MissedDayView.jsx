@@ -1,5 +1,5 @@
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
-import image from './images/MissedDayImage.jpeg';
+import image from '../images/MissedDayImage.jpeg';
 
 function MissedDayView() {
     return (

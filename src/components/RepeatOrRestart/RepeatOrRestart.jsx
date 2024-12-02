@@ -1,4 +1,4 @@
-import ButtonToGo from '../ButtonToGo';
+import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import image from './fadedRandomDayImage.jpeg';
 
 function RepeatOrRestart() {
