@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './ConfirmYourDetailsPage.jsx';
+import './ConfirmYourDetailsPage.css';
 import { useSelector } from 'react-redux';
 import NavigationButtons from '../NavigationButtons/NavigationButtons'; // Adjust the path based on your structure
 
@@ -37,21 +37,24 @@ function ConfirmYourDetailsPage() {
 
     return (
         <div className="container">
+            <p></p>
+            <p> </p>
             <h3>Confirm Your Details</h3>
             <h3>Does this all look correct?</h3>
-
             {/* Display the user information */}
-            <ul>
-                <li>Email: {tempUser.email}</li>
-                <li>First Name: {tempUser.firstName}</li>
-                <li>Last Name: {tempUser.lastName}</li>
-                <li>Timezone: {tempUser.timezone}</li>
-            </ul>
+
+            <p>Email: {tempUser.email}</p>
+            <p>First Name: {tempUser.firstName}</p>
+            <p>Last Name: {tempUser.lastName}</p>
+            <p>Timezone: {tempUser.timezone}</p>
+
 
 
             <div className="button-container">
                 <NavigationButtons />
             </div>
+          
+
         </div>
     );
 }

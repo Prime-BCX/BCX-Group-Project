@@ -3,17 +3,23 @@ Responsive Grid: One Column Default, Two Columns When Space Allows
 -------------------------------------------------------------------------------- */
 
 /* Grid Container */
-.grid {
+.container {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for responsive layouts */
-  justify-content: flex-start; /* Align items to the start */
-  align-items: flex-start;
-  width: 100%; /* Full width */
-  max-width: 390px; /* iPhone 14 Pro screen width */
-  margin: 0 auto; /* Center grid on larger screens */
-  box-sizing: border-box;
-  gap: 1rem; /* Add space between columns */
-}
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e3a8a; /* Blue background */
+  color: white; /* White text */
+  padding: 20px 20px 40px; /* Increase bottom padding */
+  height: 240px;
+  width: 300px;
+  text-align: center;
+  border-radius: 10%;
+  /* margin-left: 20px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
 /* Buttons container */
 .button-container {
