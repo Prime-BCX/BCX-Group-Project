@@ -76,7 +76,7 @@ function RegisterForm() {
   return (
     <div className="container">
    <form className="formPanel" onSubmit={handleNavigate}>
-      <h2 className="heading">Register User</h2>
+      <h2 className="headingg">Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
@@ -135,7 +135,7 @@ function RegisterForm() {
           <button 
             type="button" 
             onClick={toggleDropdown} 
-            className="dropbtn"  
+            className="dropbtun"  
         
           >
             {timezone || 'Select Timezone'}

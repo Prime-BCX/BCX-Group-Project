@@ -15,7 +15,7 @@
   text-transform: uppercase; 
 }
 
-.box {
+.boxB {
   border-radius: 12px; 
   padding: 30px; 
   margin-top: 20px; 
@@ -52,11 +52,10 @@
   background-color: #E73C71; 
 }
 
-/* Create Profile Button */
 .container .create-profile-btn {
   background-color: #E73C71; 
   color: #ffffff; 
-  border: 2px solid #E73C71; /* Pink border */
+  border: 2px solid #E73C71; 
   text-decoration: none;
 
 }
@@ -67,11 +66,10 @@
   border: 2px solid #D32A5D; 
 }
 
-/* Login Button */
 .container .login-btn {
   background-color: #E73C71; 
   color: #ffffff; 
-  border: 2px solid #E73C71; /* Pink border */
+  border: 2px solid #E73C71; 
   text-decoration: none;
 
 }
@@ -82,14 +80,13 @@
   border: 2px solid #D32A5D; 
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .button-group {
-    flex-direction: column; /* Stack buttons on smaller screens */
+    flex-direction: column; 
     gap: 15px;
   }
 
   .btn {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%;
   }
 }

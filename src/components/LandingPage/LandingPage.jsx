@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 // CUSTOM COMPONENTS
+
+
 function LandingPage() {
   const [heading, setHeading] = useState('Welcome to BCX');
   const history = useHistory();
@@ -21,7 +23,7 @@ function LandingPage() {
     <div className="container">
       <h2 className="heading">{heading}</h2>
 
-      <div className="box">
+      <div className="boxB">
        
           <p className="description">
             Over the next 100 days, you will develop the grit, self-confidence, and fortitude you need in every area of life. It's not going to be easy, but well worth it!
