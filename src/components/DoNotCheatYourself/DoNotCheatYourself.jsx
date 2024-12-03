@@ -1,4 +1,5 @@
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
+import './DoNotCheatYourself.css'
 // import image from './fadedRandomDayImage.jpeg';
 
 function DoNotCheatYourself() {
@@ -10,8 +11,10 @@ function DoNotCheatYourself() {
 
             {/* <img src={image} alt="Faded Random Day Image" /> */}
 
-            <ButtonToGo label="START OVER" path="../___________" />
-            <ButtonToGo label="KEEP GOING" path="../___________" />
+            <p className="button-container">
+                <ButtonToGo label="START OVER" path="../___________" />
+                <ButtonToGo label="KEEP GOING" path="../___________" />
+            </p>
         </div>
 
     )

@@ -19,31 +19,22 @@
   
 }
 
-/* Button styles */
-.submit-button {
-  background-color: #da3993; /* Pink button */
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 8px;
-  margin-top: 5px;
-  transition: background-color 0.3s ease;
-  
-}
-
-.submit-button:hover {
-  background-color: #da3993; /* Darker pink on hover */
+/* Buttons container */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center;
+  gap: 20px; /* Adds space between buttons */
+  margin-top: 20px; /* Optional: Adds space above the buttons */
 }
 
 /* Text styling */
-h1, h4 {
+h1, h2, h4 {
   /* margin: 10px 0; */
   /* margin-left: 100px; */
   text-align: center;
-
 }
+
 h4{
   color: #363d8e;
   font-size: 24px;
