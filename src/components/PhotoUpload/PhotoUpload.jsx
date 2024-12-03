@@ -71,9 +71,9 @@ function PhotoUpload() {
 
   return (
     <div>
-      <h4>BCX</h4>
-      <h4>Phase 1: Build</h4>
-      <h1>Start</h1>
+      {/* <h4>BCX</h4> */}
+      <h1>Phase 1: Build</h1>
+      {/* <h1>Start</h1> */}
 
       <div className="photo-upload-container">
         <h3>Start Building Your Best Self</h3>

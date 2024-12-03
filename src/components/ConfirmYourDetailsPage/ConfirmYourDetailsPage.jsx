@@ -50,7 +50,7 @@ function ConfirmYourDetailsPage() {
 
 
             <div className="grid-col grid-col_4">
-                <NavigationButtons />;
+                <NavigationButtons />
             </div>
         </div>
     );

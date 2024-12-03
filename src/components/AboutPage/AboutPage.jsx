@@ -1,4 +1,5 @@
 import React from 'react';
+import './AboutPage.css/'; 
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -11,7 +12,8 @@ function AboutPage() {
       <div>
         <p>The BCX Challenge is more than a 100-day journey; it’s a commitment to yourself, your growth, and your confidence. BCX is about building intentional habits that align with your values and creating a lifestyle that reflects the best version of you. Every step you take is an opportunity to embrace your unique strength, cultivate balance, and thrive with the support of a like-minded community.
 
-          In BCX, you’ll master two powerful phases: Build and Consistency.
+        </p>
+        <p>In BCX, you’ll master two powerful phases: Build and Consistency.
           The steps within each phase build on each other, encouraging progress over perfection and helping you cultivate lasting habits.
         </p>
          <p>Phase 1: Build (50 Days)

@@ -1,24 +1,13 @@
-.btn {
+.nav-btn {
     margin: 10px;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
-  }
-  
-  .btn-primary {
     background-color: #da3993;
     color: white;
   }
   
-  .btn-primary:hover {
+  .nav-btn:hover {
     background-color: #ca3e63;
   }
   
-  .btn-secondary {
-    background-color: #da3993;
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #ca3e63;
-  }
