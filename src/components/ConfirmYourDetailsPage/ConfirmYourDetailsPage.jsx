@@ -37,7 +37,7 @@ function ConfirmYourDetailsPage() {
 
     return (
         <div className="container">
-            <h2>Confirm Your Details</h2>
+            <h3>Confirm Your Details</h3>
             <h3>Does this all look correct?</h3>
 
             {/* Display the user information */}
@@ -49,7 +49,7 @@ function ConfirmYourDetailsPage() {
             </ul>
 
 
-            <div className="grid-col grid-col_4">
+            <div className="button-container">
                 <NavigationButtons />
             </div>
         </div>

@@ -4,7 +4,7 @@ function ShowingIntegrity() {
     return (
 
         <div className="container">
-            <h2> You Are Showing Integrity </h2>
+            <h3> You Are Showing Integrity </h3>
             <p> Starting over takes strength. You're showing integrity and taking ownership of your journey - this is what real progress looks like. Keep going with purpose.
             </p>
 

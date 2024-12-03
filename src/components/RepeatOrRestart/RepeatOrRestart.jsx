@@ -6,7 +6,7 @@ function RepeatOrRestart() {
     return (
 
         <div className="container">
-            <h2> CELEBRATE & KEEP GROWING </h2>
+            <h3> CELEBRATE & KEEP GROWING </h3>
             <p>  Whether you want to build on the momentum you've already created or reset with fresh energy by starting Phase 1 again, the choice is yours.
             </p>
 
