@@ -37,9 +37,10 @@
   }
   
   /* Text styling */
-  h1, h4 {
+  h1{
     margin: 10px 0;
     margin-left: 100px;
+    text-align: center;
   }
   h4{
     color: #363d8e;
