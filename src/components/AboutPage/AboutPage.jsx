@@ -8,7 +8,7 @@ import './AboutPage.css/';
 
 function AboutPage() {
   return (
-    <div className="container">
+    <div className="grid">
       <div>
         <p>The BCX Challenge is more than a 100-day journey; it’s a commitment to yourself, your growth, and your confidence. BCX is about building intentional habits that align with your values and creating a lifestyle that reflects the best version of you. Every step you take is an opportunity to embrace your unique strength, cultivate balance, and thrive with the support of a like-minded community.
 
