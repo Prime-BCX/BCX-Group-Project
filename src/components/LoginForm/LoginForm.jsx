@@ -41,44 +41,6 @@ function LoginForm() {
   
   
   return (
-    // <form className="formPanel" onSubmit={login}>
-    //   <h2>Login</h2>
-    //   {errors.loginMessage && (
-    //     <h3 className="alert" role="alert">
-    //       {errors.loginMessage}
-    //     </h3>
-    //   )}
-    //   <div>
-    //     <label htmlFor="email">
-    //       Email:
-    //       <input
-    //         type="text"
-    //         name="email"
-    //         required
-    //         value={email}
-    //         onChange={(event) => setEmail(event.target.value)}
-    //       />
-    //     </label>
-    //   </div>
-    //   <div>
-    //     <label htmlFor="password">
-    //       Password:
-    //       <input
-    //         type="password"
-    //         name="password"
-    //         required
-    //         value={password}
-    //         onChange={(event) => setPassword(event.target.value)}
-    //       />
-    //     </label>
-    //   </div>
-    //   <div>
-    //     <input className="btn" type="submit" name="submit" value="Log In" />
-    //   </div>
-    // </form>
-
-
-
     <form className="login-form-container" onSubmit={login}>
   <h2 className = "name">Login</h2>
   {errors.loginMessage && (
@@ -119,11 +81,6 @@ function LoginForm() {
       name="submit"
       value="Log In"
     />
-  </div>
-  <div className="create-profile-container">
-    <button className="create-profile-button" onClick={() => history.push('/register')}>
-      CREATE NEW PROFILE
-    </button>
   </div>
 </form>
 
