@@ -162,8 +162,6 @@ function RegisterForm() {
           value="Register">Submit</button>
       </div>
     </form>
-    </div>
-
 
   )};
 
