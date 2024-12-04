@@ -20,7 +20,7 @@ function InstagramView() {
             {/* <img src={image} alt="BCX and Instagram" /> */}
 
             <div className="button-container">
-                <ButtonToGo label="START PHASE ONE" path="../PhaseOnePage" />
+                <ButtonToGo label="START PHASE ONE" path="../VideoLauncher" />
             </div>
         </div>
 
