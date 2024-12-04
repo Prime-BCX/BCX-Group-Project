@@ -238,7 +238,7 @@ function App() {
 
 
           {/* If none of the other routes matched, we will show a 404. */}
-          <Route>
+          <Route path='*'>
             <h1>404</h1>
           </Route>
 

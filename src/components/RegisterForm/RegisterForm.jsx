@@ -70,7 +70,7 @@ function RegisterForm() {
   const history = useHistory();
   const handleNavigate = (event) => {
     setTempUser(event)
-    { history.push('/confirm') }
+    { history.push('/ConfirmYourDetailsPage') }
   }
 
   return (

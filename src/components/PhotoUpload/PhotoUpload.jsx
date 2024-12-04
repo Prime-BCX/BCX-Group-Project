@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import './PhotoUpload.css';
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import ProgressBar from '../ProgressBar/ProgressBar';  // Import the ProgressBar component
 
 function PhotoUpload() {
   const progressList = useSelector((store) => store.userProgressReducer.progress);
   const [isComplete, setIsComplete] = useState(false);
-  const dispatch = useDispatch(); 
-  const { id } = useParams(); 
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);  // State to store the selected photo
 
@@ -34,19 +34,19 @@ function PhotoUpload() {
 
     const formData = new FormData();
     formData.append("file", selectedPhoto);
-    formData.append("user_id", id);  
-    formData.append("day", 1);  
+    formData.append("user_id", id);
+    formData.append("day", 1);
 
     // Send the file to the backend
     fetch("http://localhost:5001/api/upload", {
-        method: "POST",
-        body: formData,
-      })
+      method: "POST",
+      body: formData,
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log("Upload successful:", data.fileUrl);
         alert("Photo uploaded successfully!");
-        
+
         // Now that the Photo is uploaded to S3, lets also add the Initial Photo URL to userImage table
         dispatch({
           type: 'SET_INITIAL_IMAGE',
@@ -54,7 +54,7 @@ function PhotoUpload() {
             user_id: id,
             initial_photo: data.fileUrl,
           },
-// Navigate
+          // Navigate
 
         });
       })
@@ -71,37 +71,36 @@ function PhotoUpload() {
 
   return (
     <div>
-      {/* <h4>BCX</h4> */}
-      {/* <h1>Phase 1: Build</h1> */}
-      {/* <h1>Start</h1> */}
+      <div className="mycontainer">
+        <h1>Phase 1: Build</h1>
+      </div>
 
       <div className="photo-upload-container">
-      
-
-        <h3>Phase 1: Build</h3>
-          <h3>Start Building Your Best Self</h3>
+        <h3>Start Building Your Best Self</h3>
         <p>Your journey to empowerment, confidence, and strength begins now. Every step builds the foundation of the woman you're becoming.
-           Submit your photo now, and don't forget to snap tomorrow's first thing in the morning. This is your time to take ownership—let's go.</p>
+          Submit your photo now, and don't forget to snap tomorrow's first thing in the morning. This is your time to take ownership—let's go.</p>
 
         {/* Form to select and upload photo */}
         <form onSubmit={handleSubmit}>
-          <input 
-            type="file" 
-            accept="image/*" 
-            onChange={handleFileChange} 
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
             required
           />
           <button className="submit-button" type="submit">
             Submit Your Photo
           </button>
+          <p></p>
+          <p></p>
         </form>
       </div>
 
-      <div className="progress-container" onChange={handleComplete}>          
+      <div className="progress-container" onChange={handleComplete}>
         {progressList.map((item) => (
           <div key={item.user_id}>
-        
-            
+
+
             <ProgressBar value={item.step} />
           </div>
         ))}

@@ -1,11 +1,18 @@
 /* General layout */
+.mycontainer {
+  text-align: center;
+  color:#1e3a8a;
+  margin-right: 85px;
+  margin-left: -25px;
+}
+
 .photo-upload-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #1e3a8a; /* Blue background */
-    color: white; /* White text */
+    color: #ffffff; /* White text */
     padding: 20px;
     height: 240px;
     width: 300px;
@@ -41,6 +48,7 @@
     margin: 10px 0;
     margin-left: 100px;
     text-align: center;
+    color:#1e3a8a
     
   }
   h4{

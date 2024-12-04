@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 
 function LoginForm() {
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector((store) => store.user);  
- 
+  const user = useSelector((store) => store.user);
+
   const login = (event) => {
-    
+
     event.preventDefault();
-    
+
 
     if (email && password) {
       dispatch({
@@ -26,23 +26,23 @@ function LoginForm() {
           email: email,
           password: password,
         },
-       
+
       })
       //
-      console.log('user id at login page',user.id);
+      console.log('user id at login page', user.id);
       //history.push('/PhotoUpload/${user.id}');
       history.push('/user');
-    //
+      //
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
   }; // end login
 
-  
-  
+
+
   return (
     <form className="formPanel" onSubmit={login}>
-      <h2>Login</h2>
+      <h2>Please Log In</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
@@ -73,7 +73,9 @@ function LoginForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+        <input className="btn" type="submit" name="submit" value="Submit" />
+       
+
       </div>
     </form>
   );
