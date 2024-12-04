@@ -18,6 +18,7 @@ import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import BCXDayScreen from '../BCXDayScreen/BCXDayScreen'; 
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
@@ -107,13 +108,14 @@ function App() {
           >
             <VideoLauncher/>
           </ProtectedRoute>
-          {/* <ProtectedRoute
-            // temporary to view
+
+          <Route
             exact
-            path="/src/components/MissedDayView"
+            path="/bcx-day-screen"
           >
-            <MissedDayView />
-          </ProtectedRoute> */}
+            <BCXDayScreen />
+          </Route>
+          
 
           <Route
             exact
@@ -131,7 +133,7 @@ function App() {
 
           <Route
             exact
-            path="/registration"
+            path="/register"
           >
             {user.id ?
               // If the user is already logged in, 

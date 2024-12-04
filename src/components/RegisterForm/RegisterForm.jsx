@@ -74,27 +74,16 @@ function RegisterForm() {
   }
 
   return (
-    <form className="formPanel" onSubmit={handleNavigate}  >
-      <h2>Register User</h2>
+    <div className="container">
+   <form className="formPanel" onSubmit={handleNavigate}>
+      <h2 className="headingg">Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
       )}
 
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          required
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </div>
-
-      <div>
+      <div className="formGroup">
         <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
@@ -106,7 +95,7 @@ function RegisterForm() {
         />
       </div>
 
-      <div>
+      <div className="formGroup">
         <label htmlFor="lastName">Last Name:</label>
         <input
           type="text"
@@ -118,13 +107,35 @@ function RegisterForm() {
         />
       </div>
 
-      <div>
+      <div className="formGroup">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          required
+          onChange={(event) => setEmail(event.target.value)}
+        />
+      </div>
+      <div className="formGroup">
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          required
+          onChange={(event) => setPassword(event.target.value)}
+        />
+      </div>
+      <div className="formhGroup">
         <label htmlFor="timezone">Timezone:</label>
         <div className="dropdown">
           <button 
             type="button" 
             onClick={toggleDropdown} 
-            className="dropbtn"  
+            className="dropbtun"  
         
           >
             {timezone || 'Select Timezone'}
@@ -139,31 +150,22 @@ function RegisterForm() {
                 <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
               </ul>
             </div>
+            
           )}
         </div>
       </div>
 
       <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          required
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </div>
-
-      <div>
         <button
-          className="btn"
+          className="butn"
           type="submit"
           name="submit"
           value="Register">Submit</button>
       </div>
     </form>
-  );
-}
+    </div>
+
+
+  )};
 
 export default RegisterForm;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-
+import './Login.css';
 
 
 function LoginForm() {
@@ -41,41 +41,49 @@ function LoginForm() {
   
   
   return (
-    <form className="formPanel" onSubmit={login}>
-      <h2>Login</h2>
-      {errors.loginMessage && (
-        <h3 className="alert" role="alert">
-          {errors.loginMessage}
-        </h3>
-      )}
-      <div>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="text"
-            name="email"
-            required
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
-      </div>
-    </form>
+    <form className="login-form-container" onSubmit={login}>
+  <h2 className = "name">Login</h2>
+  {errors.loginMessage && (
+    <h3 className="login-form-alert" role="alert">
+      {errors.loginMessage}
+    </h3>
+  )}
+  <div>
+    <label htmlFor="email" className="login-form-label">
+      Email:
+      <input
+        type="text"
+        name="email"
+        required
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        className="login-form-inputt"
+      />
+    </label>
+  </div>
+  <div>
+    <label htmlFor="password" className="login-form-label">
+      Password:
+      <input
+        type="password"
+        name="password"
+        required
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+        className="login-form-inputt"
+      />
+    </label>
+  </div>
+  <div>
+    <input
+      className="loginn-form-button"
+      type="submit"
+      name="submit"
+      value="Log In"
+    />
+  </div>
+</form>
+
   );
 }
 
