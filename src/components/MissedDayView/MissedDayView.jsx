@@ -10,7 +10,7 @@ function MissedDayView() {
 
             {/* <img src="../Images/MissedDayImage.jpeg" alt="An illustration of a missed day" /> */}
 
-            <ButtonToGo label="I FORGOT TO CHECK IN" path="../Checklist___________" />
+            <ButtonToGo label="I FORGOT TO CHECK IN" path="../ChecklistPage" />
             <ButtonToGo label="TIME TO RESET" path="../ShowingIntegrity" />
 
         </div>

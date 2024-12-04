@@ -114,14 +114,15 @@ function App() {
             <VideoLauncher />
           </ProtectedRoute>
 
+          {/* BCXDayScreen */}
           <Route
             exact
-            path="/bcx-day-screen"
+            path="/BCXDayScreen"
           >
             <BCXDayScreen />
           </Route>
           
-
+          {/* User / Login */}
           <Route
             exact
             path="/login"
@@ -214,9 +215,6 @@ function App() {
               <LandingPage />
             }
           </Route>
-
-          {//TODO: add authentication; left out for testing
-          }
 
           {/* Checklist Page */}
           <Route
