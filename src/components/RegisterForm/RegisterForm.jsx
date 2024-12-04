@@ -129,14 +129,13 @@ function RegisterForm() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <div className="formhGroup">
+      <div className="formGroup">
         <label htmlFor="timezone">Timezone:</label>
         <div className="dropdown">
           <button 
             type="button" 
             onClick={toggleDropdown} 
-            className="dropbtun"  
-        
+            className="dropbtn"  
           >
             {timezone || 'Select Timezone'}
           </button>

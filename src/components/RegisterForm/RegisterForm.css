@@ -46,7 +46,7 @@ label {
 }
 
 input,
-.dropbtun {
+.dropbtn {
   flex: 2;
   padding: 10px;
   font-size: 16px;
