@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ConfirmYourDetailsPage.jsx';
-import { useSelector } from 'react-redux';
-import NavigationButtons from '../NavigationButtons/NavigationButtons'; // Adjust the path based on your structure
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function ConfirmYourDetailsPage() {
     const history = useHistory();
     const tempUser = useSelector(state => state.userConfirmReducer)
-
+    const dispatch = useDispatch();
     const handleNavigate = (event) => {
         registerUser(event)
         history.push('../PhotoUpload');
@@ -24,8 +23,8 @@ function ConfirmYourDetailsPage() {
                 type: 'REGISTER',
                 payload: {
                     email: tempUser.email,
-                    firstName: tempUser.firstName,
-                    lastName: tempUser.lastName,
+                    first_name: tempUser.firstName,
+                    last_name: tempUser.lastName,
                     password: tempUser.password,
                     timezone: tempUser.timezone,
                 },
@@ -50,7 +49,16 @@ function ConfirmYourDetailsPage() {
 
 
             <div className="grid-col grid-col_4">
-                <NavigationButtons />;
+            <div>
+            <button
+                onClick={() => history.push('/registration')} // Navigate to RegisterPage
+            > Edit
+            </button>
+            <button
+                onClick={handleNavigate}
+            > Looks Good!
+            </button>
+        </div>
             </div>
         </div>
     );
