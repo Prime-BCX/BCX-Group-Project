@@ -134,10 +134,10 @@ function RegisterForm() {
           {dropdownOpen && (
             <div className="dropdown-content">
               <ul>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('EST'); }}>EST</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
               </ul>
             </div>
           )}

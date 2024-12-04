@@ -18,10 +18,10 @@ function UserPage() {
         <h2>begin your Journey!</h2>
         </Link>
       </h2>
-      <p>Your ID is: {user.id}</p>
+      {/* <p>Your ID is: {user.id}</p> */}
       
       {/* Log Out Button */}
-      <LogOutButton className="btn" />
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }

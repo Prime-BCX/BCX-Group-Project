@@ -72,11 +72,14 @@ function PhotoUpload() {
   return (
     <div>
       {/* <h4>BCX</h4> */}
-      <h1>Phase 1: Build</h1>
+      {/* <h1>Phase 1: Build</h1> */}
       {/* <h1>Start</h1> */}
 
       <div className="photo-upload-container">
-        <h3>Start Building Your Best Self</h3>
+      
+
+        <h3>Phase 1: Build</h3>
+          <h3>Start Building Your Best Self</h3>
         <p>Your journey to empowerment, confidence, and strength begins now. Every step builds the foundation of the woman you're becoming.
            Submit your photo now, and don't forget to snap tomorrow's first thing in the morning. This is your time to take ownership—let's go.</p>
 
