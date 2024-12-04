@@ -26,6 +26,8 @@ import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetails
 import NavigationButtons from '../NavigationButtons/NavigationButtons';
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
+import StepStarterVideo from '../StepStarterVideo/StepStarterVideo';
+import WhatsNext from '../WhatsNext/WhatsNext';
 
 function App() {
   const dispatch = useDispatch();
@@ -65,29 +67,41 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+          <ProtectedRoute            
             exact
             path="/PhotoUpload/:id"
           >
             <PhotoUpload/>
-          </ProtectedRoute>   
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+          </ProtectedRoute>
+
+          <ProtectedRoute            
             exact
             path="/EndOfStepView"
           >
             <EndOfStepView/>
-          </ProtectedRoute>   
+          </ProtectedRoute>  
+          <ProtectedRoute            
+            exact
+            path="/WhatsNext"
+          >
+            <WhatsNext/>
+          </ProtectedRoute>  
+
+          <ProtectedRoute            
+            exact
+            path="/StepStarterVideo"
+          >
+            <StepStarterVideo/>
+          </ProtectedRoute>    
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+           
             exact
             path="/VideoPlayer"
           >
             <VideoPlayer/>
           </ProtectedRoute>
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+          
             exact
             path="/VideoLauncher"
           >

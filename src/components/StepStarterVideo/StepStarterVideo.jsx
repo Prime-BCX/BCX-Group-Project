@@ -1,11 +1,11 @@
 import React from "react";
 import VideoCreater from "../VideoCreater/VideoCreater";
-import './VideoLauncher.css';
 
 
-function VideoLauncher(){
 
-    const handleStartPhase1 = () => {
+function StepStarterVideo(){
+
+    const handleStartStep1 = () => {
 
     };
 
@@ -13,8 +13,8 @@ return(
 <div className="className="video-launcher-container>
 <VideoCreater/>
 <div className="bottom">
-<button className="btn" onClick={handleStartPhase1}>
-        START THE CHALLENGE1
+<button className="btn" onClick={handleStartStep1}>
+        START STEP 1
       </button>
       <div className="faq-link-container">
         <a href="/faq" className="faq-link">BCX Challenge FAQ</a>
@@ -28,4 +28,4 @@ return(
 
 }
 
-export default VideoLauncher;
+export default StepStarterVideo;
