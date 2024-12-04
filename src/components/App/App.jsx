@@ -26,6 +26,7 @@ import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import BCXDayScreen from '../BCXDayScreen/BCXDayScreen'; 
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
@@ -113,7 +114,14 @@ function App() {
             <VideoLauncher />
           </ProtectedRoute>
 
-          {/* Login */}
+          <Route
+            exact
+            path="/bcx-day-screen"
+          >
+            <BCXDayScreen />
+          </Route>
+          
+
           <Route
             exact
             path="/login"
@@ -131,7 +139,7 @@ function App() {
           {/* Registration */}
           <Route
             exact
-            path="/registration"
+            path="/register"
           >
             {user.id ?
               // If the user is already logged in, 
