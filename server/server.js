@@ -117,7 +117,7 @@ async function sendReminderEmail(userEmail, first_name){
     text: `Hey ${first_name}, just a quick reminder that you haven't marked your daily habits off on the BCX 100 web-app! to avoid losing your progress, make sure to log on and complete each of your habits in the next four hours. You can do it!`,
   };
   try{
-    //await transporter.sendMail(mailSettings); //TODO: UNCOMMENT WHEN MERGING
+    await transporter.sendMail(mailSettings);
     console.log(`sent reminder to ${userEmail}`);
   } catch(err) {
     console.log('Error sending email!!', err);
