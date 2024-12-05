@@ -26,7 +26,7 @@ router.get('/intro-video-url', async (req, res) => {
 
     if (rows.length > 0) {
       const introVideoUrl = rows[0].intro_video;  // Correct field name in the database
-      console.log('Intro video URL at router:', introVideoUrl);
+      //console.log('Intro video URL at router:', introVideoUrl);
 
       // Set up S3 signed URL parameters
       const params = {
@@ -37,7 +37,7 @@ router.get('/intro-video-url', async (req, res) => {
 
       // Generate the S3 signed URL 
       const signedUrl = await s3.getSignedUrlPromise('getObject', params);
-      console.log('Signed URL:', signedUrl);
+      //console.log('Signed URL:', signedUrl);
 
       // Send the signed URL as the response
       res.json({ videoUrl: signedUrl });
@@ -84,6 +84,8 @@ router.get('/completion-video-url', async (req, res) => {
     console.error('Error fetching video URL:', error);
     res.status(500).send('Internal Server Error');
   }
+
+
 });
 
 

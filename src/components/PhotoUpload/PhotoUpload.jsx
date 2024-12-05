@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import './PhotoUpload.css';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom"; 
-import ProgressBar from '../ProgressBar/ProgressBar';  // Import the ProgressBar component
+import ProgressBar from '../ProgressBar/ProgressBar';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function PhotoUpload() {
   const progressList = useSelector((store) => store.userProgressReducer.progress);
   const [isComplete, setIsComplete] = useState(false);
   const dispatch = useDispatch(); 
   const { id } = useParams(); 
-
+  const history = useHistory();
   const [selectedPhoto, setSelectedPhoto] = useState(null);  // State to store the selected photo
 
   useEffect(() => {
@@ -23,7 +24,9 @@ function PhotoUpload() {
       setSelectedPhoto(file);
     }
   };
-
+  const goToVideo = () => {
+    history.push(`/VideoLauncher/${id}`);
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -88,7 +91,7 @@ function PhotoUpload() {
             onChange={handleFileChange} 
             required
           />
-          <button className="submit-button" type="submit">
+          <button className="submit-button" type="submit" onClick={goToVideo}>
             Submit Your Photo
           </button>
         </form>

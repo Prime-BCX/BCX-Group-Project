@@ -29,6 +29,7 @@ import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
 import StepStarterVideo from '../StepStarterVideo/StepStarterVideo';
 import WhatsNext from '../WhatsNext/WhatsNext';
+import InstagramView from '../InstagramView/InstagramView';
 
 function App() {
   const dispatch = useDispatch();
@@ -87,24 +88,30 @@ function App() {
           >
             <WhatsNext/>
           </ProtectedRoute>  
-
           <ProtectedRoute            
             exact
-            path="/StepStarterVideo"
+            path="/InstagramView/:id"
+          >
+            <InstagramView/>
+          </ProtectedRoute>
+
+          <ProtectedRoute            
+            exact 
+            path="/StepStarterVideo/:id"
           >
             <StepStarterVideo/>
           </ProtectedRoute>    
           <ProtectedRoute
            
             exact
-            path="/VideoPlayer"
+            path="/VideoPlayer/"
           >
             <VideoPlayer/>
           </ProtectedRoute>
           <ProtectedRoute
           
             exact
-            path="/VideoLauncher"
+            path="/VideoLauncher/:id"
           >
             <VideoLauncher/>
           </ProtectedRoute>
