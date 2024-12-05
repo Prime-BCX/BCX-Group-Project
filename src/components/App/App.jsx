@@ -26,7 +26,7 @@ import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import BCXDayScreen from '../BCXDayScreen/BCXDayScreen'; 
+import BCXDayScreen from '../BCXDayScreen/BCXDayScreen';
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
@@ -78,40 +78,48 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute            
+          {/* Photo Upload View */}
+          <ProtectedRoute
             exact
             path="/PhotoUpload/:id"
           >
-            <PhotoUpload/>
+            <PhotoUpload />
           </ProtectedRoute>
 
-          <ProtectedRoute            
+          {/* End of Step */}
+          <ProtectedRoute
             exact
             path="/EndOfStepView"
           >
-            <EndOfStepView/>
-          </ProtectedRoute>  
-          <ProtectedRoute            
+            <EndOfStepView />
+          </ProtectedRoute>
+
+          {/* What's Next */}
+          <ProtectedRoute
             exact
             path="/WhatsNext"
           >
-            <WhatsNext/>
-          </ProtectedRoute>  
-          <ProtectedRoute            
+            <WhatsNext />
+          </ProtectedRoute>
+
+          {/* Instagram View */}
+          <ProtectedRoute
             exact
             path="/InstagramView/:id"
           >
-            <InstagramView/>
+            <InstagramView />
           </ProtectedRoute>
 
-          <ProtectedRoute            
-            exact 
+          {/* Step-Starter Video */}
+          <ProtectedRoute
+            exact
             path="/StepStarterVideo/:id"
           >
-            <StepStarterVideo/>
-          </ProtectedRoute>    
+            <StepStarterVideo />
+          </ProtectedRoute>
+
+          {/* Video Player */}
           <ProtectedRoute
-           
             exact
             path="/VideoPlayer/"
           >
@@ -120,22 +128,21 @@ function App() {
 
           {/* Video Launcher */}
           <ProtectedRoute
-          
             exact
             path="/VideoLauncher/:id"
           >
             <VideoLauncher />
           </ProtectedRoute>
 
-          {/* BCXDayScreen */}
+          {/* BCX Day Screen */}
           <Route
             exact
             path="/BCXDayScreen"
           >
             <BCXDayScreen />
           </Route>
-          
-          {/* User / Login */}
+
+          {/* User Log-in */}
           <Route
             exact
             path="/login"
@@ -238,19 +245,7 @@ function App() {
           </Route>
 
 
-
-
-          {/* Navigate to PhaseOnePage */}
-          {/* <Route>
-            <div>
-              <ButtonToGo />
-              <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
-
-            </div>
-          </Route>
- */}
-
-          {/* If none of the other routes matched, we will show a 404. */}
+          {/* Error 404:If none of the other routes matched, we will show a 404. */}
           <Route path='*'>
             <h1>Error: 404</h1>
           </Route>
