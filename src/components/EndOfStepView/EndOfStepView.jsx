@@ -3,11 +3,12 @@ import './EndOfStepView.css';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProgressBar from '../ProgressBar/ProgressBar';  // Import the ProgressBar component
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 function EndOfStepView() {
     const progressList = useSelector((store) => store.userProgressReducer.progress);
     const [isComplete, setIsComplete] = useState(false);
     const dispatch = useDispatch();
+    const history = useHistory;
     const { id } = useParams();
 
     const [selectedPhoto, setSelectedPhoto] = useState(null);  // State to store the selected photo
@@ -60,12 +61,18 @@ function EndOfStepView() {
                 console.error("Error uploading photo:", error);
                 alert("Failed to upload photo.");
             });
+
+            goToStepStarterPage();
     };
 
     const handleComplete = (event) => {
         event.preventDefault();
         setIsComplete(!isComplete);
     };
+
+    const goToStepStarterPage = () => {
+        history.push(`/StepStarterVideo/${id}`);
+      }
 
     return (
         <div>
@@ -87,7 +94,8 @@ function EndOfStepView() {
                         onChange={handleFileChange}
                         required
                     />
-                    <button className="submit-button" type="submit">
+                    <button
+                     className="submit-button" type="submit">
                         Submit Your Photo
                     </button>
                 </form>

@@ -193,7 +193,7 @@ function App() {
           {/* MissedDayView */}
           <ProtectedRoute
             exact
-            path="/MissedDayView"
+            path="/MissedDayView/:id"
           >
             <MissedDayView />
           </ProtectedRoute>
@@ -209,7 +209,7 @@ function App() {
           {/* ShowingIntegrity */}
           <ProtectedRoute
             exact
-            path="/ShowingIntegrity"
+            path="/ShowingIntegrity/:id"
           >
             <ShowingIntegrity />
           </ProtectedRoute>

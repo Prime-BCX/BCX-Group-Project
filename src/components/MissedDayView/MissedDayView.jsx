@@ -1,6 +1,8 @@
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
-
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 function MissedDayView() {
+    const id = useParams;
+
     return (
         <div className="container">
 
@@ -15,8 +17,8 @@ function MissedDayView() {
                 </h1>
             </div> */}
             
-            <ButtonToGo label="I FORGOT TO CHECK IN" path="../ChecklistPage" />
-            <ButtonToGo label="TIME TO RESET" path="../ShowingIntegrity" />
+            <ButtonToGo label="I FORGOT TO CHECK IN" path="/main" />
+            <ButtonToGo label="TIME TO RESET" path={`/ShowingIntegrity/${id}`}   />
 
         </div>
     )

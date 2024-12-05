@@ -27,8 +27,8 @@ function StepStarterVideo() {
     }
   }, [dispatch, userProgress]);
 
-  const goToChecklistPage = () => {
-    history.push(`/main`);
+  const goToStepStarterPage = () => {
+    history.push(`/StepStarterVideo/${id}`);
   }
 
   //const currentStep = stepData
@@ -44,7 +44,7 @@ function StepStarterVideo() {
 
       <div className="bottom">
         <button className="btn" 
-          onClick={goToChecklistPage}>
+          onClick={goToStepStarterPage}>
           START STEP {stepData.stepid}
         </button>
         <div className="faq-link-container">
