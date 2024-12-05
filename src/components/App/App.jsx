@@ -24,7 +24,6 @@ import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
 import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
 //For Navigation Buttons:
-import NavigationButtons from '../NavigationButtons/NavigationButtons';
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
 
@@ -163,15 +162,6 @@ function App() {
 
 
 
-
-          {/* For Navigation Buttons:   */}
-          <Route>
-            <div>
-              <NavigationButtons />
-                <Route path="../RegisterPage" element={<RegisterPage />} />
-                <Route path="../PhotoUpload" element={<PhotoUpload />} />
-            </div>
-          </Route>
 
           {/* Navigate to PhaseOnePage */}
           <Route>
