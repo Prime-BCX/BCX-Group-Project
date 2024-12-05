@@ -159,6 +159,7 @@ function RegisterForm() {
           className="butn"
           type="submit"
           name="submit"
+          onClick={handleNavigate}
           value="Register">Submit</button>
       </div>
     </form>
