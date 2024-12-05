@@ -10,7 +10,7 @@ function ConfirmYourDetailsPage() {
     const dispatch = useDispatch();
     const handleNavigate = (event) => {
         registerUser(event)
-        history.push('../UserPage');
+        history.push('../user');
     };
 
     // Handle form submission
