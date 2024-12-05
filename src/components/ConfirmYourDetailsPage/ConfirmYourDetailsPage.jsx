@@ -52,7 +52,7 @@ function ConfirmYourDetailsPage() {
             <div className="grid-col grid-col_4">
             <div>
             <button
-                onClick={() => history.push('/registration')} // Navigate to RegisterPage
+                onClick={() => history.push('/register')} // Navigate to RegisterPage
             > Edit
             </button>
             <button
