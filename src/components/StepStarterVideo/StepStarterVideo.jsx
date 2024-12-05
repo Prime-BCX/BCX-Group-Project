@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function StepStarterVideo() {
   const { id } = useParams(); 
   const dispatch = useDispatch();
-  
+  const history = useHistory();
   const userProgress = useSelector((store) => store.userProgressReducer.progress);
   const stepData = useSelector((store) => store.stepsReducer.steps);
   console.log ('stepdata', stepData)
@@ -27,6 +27,10 @@ function StepStarterVideo() {
     }
   }, [dispatch, userProgress]);
 
+  const goToChecklistPage = () => {
+    history.push(`/ChecklistPage/${id}`);
+  }
+
   //const currentStep = stepData
   //console.log('Current step data:', currentStep);
 //console.log('my step',stepData.stepData.step_text)
@@ -39,7 +43,8 @@ function StepStarterVideo() {
       </div>
 
       <div className="bottom">
-        <button className="btn">
+        <button className="btn" 
+          onClick={goToChecklistPage}>
           START STEP {stepData.stepid}
         </button>
         <div className="faq-link-container">
