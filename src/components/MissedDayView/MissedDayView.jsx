@@ -9,7 +9,12 @@ function MissedDayView() {
             </p>
 
             {/* <img src="../Images/MissedDayImage.jpeg" alt="An illustration of a missed day" /> */}
-
+           
+            {/* <div className="background">
+                <h1 style={{ color: 'white', textAlign: 'center', paddingTop: '20px' }}>
+                </h1>
+            </div> */}
+            
             <ButtonToGo label="I FORGOT TO CHECK IN" path="../ChecklistPage" />
             <ButtonToGo label="TIME TO RESET" path="../ShowingIntegrity" />
 
