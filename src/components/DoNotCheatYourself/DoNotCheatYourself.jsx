@@ -12,8 +12,8 @@ function DoNotCheatYourself() {
             {/* <img src={image} alt="Faded Random Day Image" /> */}
 
             <p className="button-container">
-                <ButtonToGo label="START OVER" path="../BCXDayScreen" />
-                <ButtonToGo label="KEEP GOING" path="../ChecklistPage" />
+                <ButtonToGo label="START OVER" path="/BCXDayScreen" />
+                <ButtonToGo label="KEEP GOING" path="/main" />
             </p>
         </div>
 
