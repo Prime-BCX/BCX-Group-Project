@@ -9,7 +9,7 @@ function UserPage() {
   const user = useSelector((store) => store.user);  
 
   return (
-    <div className="container">
+    <div className="userPageContainer">
       {/* Personalized Welcome Message with clickable text link */}
       <h2>
         Welcome,{' '} 
