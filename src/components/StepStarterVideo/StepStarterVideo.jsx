@@ -28,7 +28,7 @@ function StepStarterVideo() {
   }, [dispatch, userProgress]);
 
   const goToChecklistPage = () => {
-    history.push(`/ChecklistPage/${id}`);
+    history.push(`/main`);
   }
 
   //const currentStep = stepData

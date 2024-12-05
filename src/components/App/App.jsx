@@ -241,18 +241,18 @@ function App() {
 
 
           {/* Navigate to PhaseOnePage */}
-          <Route>
+          {/* <Route>
             <div>
               <ButtonToGo />
               <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
 
             </div>
           </Route>
-
+ */}
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route path='*'>
-            <h1>404</h1>
+            <h1>Error: 404</h1>
           </Route>
 
         </Switch>
