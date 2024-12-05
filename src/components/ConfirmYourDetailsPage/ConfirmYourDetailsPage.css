@@ -45,4 +45,4 @@ Responsive Grid: One Column Default, Two Columns When Space Allows
   .grid-col {
     flex: 1 0 50%; /* Half-width for two columns */
     /* max-width: 50%;  */
-  
+}
