@@ -5,9 +5,7 @@ function BCXDayScreen(){
   return (
     <div className="bcx-container">
       <header className="bcx-header">
-        <h1 className="bcx-title">BCX</h1>
-        <h2 className="bcx-day">DAY 12</h2>
-        <div className="bcx-status">DONE</div>
+        <h1 className="bcx-day">DAY 12</h1>
       </header>
       <div className="bcx-progress-bar">
         <div className="progress"></div>
@@ -18,8 +16,8 @@ function BCXDayScreen(){
           <span className="task">🧘 5 MIN. MEDITATION</span>
         </div>
         <div className="task-row">
-          <span className="task active">🧠 15 MIN. OF PD</span>
-          <span className="task">❌ FOLLOW A MEAL PLAN</span>
+          <span className="task active">🧠  15 MIN. OF PD</span>
+          <span className="task">🍽️   FOLLOW A MEAL PLAN</span>
         </div>
         <div className="task-row">
           <span className="task">🚶‍♂️ 10K STEPS</span>

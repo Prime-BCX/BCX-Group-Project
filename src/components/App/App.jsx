@@ -12,7 +12,15 @@ import VideoLauncher from '../VideoLauncher/VideoLauncher';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+
 import AboutPage from '../AboutPage/AboutPage';
+import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
+import DoNotCheatYourself from '../DoNotCheatYourself/DoNotCheatYourself';
+import InstagramView from '../InstagramView/InstagramView';
+import MissedDayView from '../MissedDayView/MissedDayView';
+import RepeatOrRestart from '../RepeatOrRestart/RepeatOrRestart';
+import ShowingIntegrity from '../ShowingIntegrity/ShowingIntegrity';
+
 import UserPage from '../UserPage/UserPage';
 import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import LandingPage from '../LandingPage/LandingPage';
@@ -22,8 +30,7 @@ import BCXDayScreen from '../BCXDayScreen/BCXDayScreen';
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
-import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
-//For Navigation Buttons:
+
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
 
@@ -45,10 +52,12 @@ function App() {
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:5173/about will show the about page. */}
+
+          {/* About Page */}
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
+            path="/AboutPage"
           >
             <AboutPage />
           </Route>
@@ -57,6 +66,8 @@ function App() {
             Visiting localhost:5173/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
             Even though it seems like they are different pages, the user is always on localhost:5173/user */}
+
+          {/* User Page */}
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
@@ -65,43 +76,51 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
+          {/* Photo Upload */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/PhotoUpload/:id"
           >
-            <PhotoUpload/>
-          </ProtectedRoute>   
+            <PhotoUpload />
+          </ProtectedRoute>
+
+          {/* End of Step */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/EndOfStepView"
           >
-            <EndOfStepView/>
-          </ProtectedRoute>   
+            <EndOfStepView />
+          </ProtectedRoute>
+
+          {/* Video Player */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/VideoPlayer"
           >
-            <VideoPlayer/>
+            <VideoPlayer />
           </ProtectedRoute>
+
+          {/* Video Launcher */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/VideoLauncher"
           >
-            <VideoLauncher/>
+            <VideoLauncher />
           </ProtectedRoute>
 
+          {/* BCXDayScreen */}
           <Route
             exact
-            path="/bcx-day-screen"
+            path="/BCXDayScreen"
           >
             <BCXDayScreen />
           </Route>
           
-
+          {/* User / Login */}
           <Route
             exact
             path="/login"
@@ -116,6 +135,7 @@ function App() {
             }
           </Route>
 
+          {/* Registration */}
           <Route
             exact
             path="/register"
@@ -130,14 +150,56 @@ function App() {
             }
           </Route>
 
+          {/* ConfirmYourDetailsPage */}
           <Route
             // sends user to confirmation of details
             exact
-            path="/confirm"
+            path="/ConfirmYourDetailsPage"
           >
             <ConfirmYourDetailsPage />
           </Route>
 
+          {/* DoNotCheatYourself */}
+          <ProtectedRoute
+            exact
+            path="/DoNotCheatYourself"
+          >
+            <DoNotCheatYourself />
+          </ProtectedRoute>
+
+          {/* InstagramView */}
+          <ProtectedRoute
+            exact
+            path="/InstagramView"
+          >
+            <InstagramView />
+          </ProtectedRoute>
+
+          {/* MissedDayView */}
+          <ProtectedRoute
+            exact
+            path="/MissedDayView"
+          >
+            <MissedDayView />
+          </ProtectedRoute>
+
+          {/* RepeatOrRestart */}
+          <ProtectedRoute
+            exact
+            path="/RepeatOrRestart"
+          >
+            <RepeatOrRestart />
+          </ProtectedRoute>
+
+          {/* ShowingIntegrity */}
+          <ProtectedRoute
+            exact
+            path="/ShowingIntegrity"
+          >
+            <ShowingIntegrity />
+          </ProtectedRoute>
+
+          {/* Home Page */}
           <Route
             exact
             path="/home"
@@ -151,11 +213,11 @@ function App() {
               <LandingPage />
             }
           </Route>
-          {//TODO: add authentication; left out for testing
-          }
+
+          {/* Checklist Page */}
           <Route
             exact
-            path ="/main"
+            path="/main"
           >
             <ChecklistPage />
           </Route>
@@ -168,13 +230,13 @@ function App() {
             <div>
               <ButtonToGo />
               <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
-            
+
             </div>
           </Route>
 
 
           {/* If none of the other routes matched, we will show a 404. */}
-          <Route>
+          <Route path='*'>
             <h1>404</h1>
           </Route>
 

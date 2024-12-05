@@ -1,80 +1,48 @@
 /* --------------------------------------------------------------------------------
-Grid
+Responsive Grid: One Column Default, Two Columns When Space Allows
 -------------------------------------------------------------------------------- */
 
-.grid {
-    display: flex;
-    flex: 0 1 auto;
-    /* defaults to 'row' */
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* defaults to 'flex-start' */
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
+/* Grid Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e3a8a; /* Blue background */
+  color: white; /* White text */
+  padding: 20px 20px 40px; /* Increase bottom padding */
+  height: 240px;
+  width: 300px;
+  text-align: center;
+  border-radius: 10%;
+  /* margin-left: 20px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+/* Buttons container */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center;
+  gap: 20px; /* Adds space between buttons */
+  margin-top: 20px; /* Optional: Adds space above the buttons */
+}
+
+/* Grid Column */
+.grid-col {
+  flex: 1 0 100%; /* Default: Full width (one column) */
+  padding: 0.5rem; /* Add padding for spacing */
+  box-sizing: border-box;
+  background-color: #f4f4f4; /* Light gray background for visibility */
+  border: 1px solid #ccc; /* Border for better visualization */
+  text-align: center; /* Center-align content */
+}
+
+/* Two-Column Layout: Switch to two columns when the screen is wider */
+/*@media (min-width: 600px) {
   .grid-col {
-    flex: 0 0 auto;
-    padding: 0 0.5rem 0.5rem;
-    box-sizing: border-box;
-  }
-  
-  .grid-col_1 {
-    flex-basis: 8.33333333%;
-    max-width: 8.33333333%;
-  }
-  
-  .grid-col_2 {
-    flex-basis: 16.66666667%;
-    max-width: 16.66666667%;
-  }
-  
-  .grid-col_3 {
-    flex-basis: 25%;
-    max-width: 25%;
-  }
-  
-  .grid-col_4 {
-    flex-basis: 33.33333333%;
-    max-width: 33.33333333%;
-  }
-  
-  .grid-col_5 {
-    flex-basis: 41.66666667%;
-    max-width: 41.66666667%;
-  }
-  
-  .grid-col_6 {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
-  
-  .grid-col_7 {
-    flex-basis: 58.33333333%;
-    max-width: 58.33333333%;
-  }
-  
-  .grid-col_8 {
-    flex-basis: 66.66666667%;
-    max-width: 66.66666667%;
-  }
-  
-  .grid-col_9 {
-    flex-basis: 75%;
-    max-width: 75%;
-  }
-  
-  .grid-col_10 {
-    flex-basis: 83.33333333%;
-    max-width: 83.33333333%;
-  }
-  
-  .grid-col_11 {
-    flex-basis: 91.66666667%;
-    max-width: 91.66666667%;
-  }
-  
-  .grid-col_12 {
-    flex-basis: 100%;
-    max-width: 100%;
-  }  
+    flex: 1 0 50%; /* Half-width for two columns */
+    /* max-width: 50%;  */
+}

@@ -1,24 +1,14 @@
-.btn {
+.btn-to-go{
     margin: 10px;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
-  }
-  
-  .btn-primary {
     background-color: #da3993;
     color: white;
   }
   
-  .btn-primary:hover {
+  .btn-to-go:hover {
     background-color: #ca3e63;
   }
   
-  .btn-secondary {
-    background-color: #da3993;
-    color: white;
-  }
   
-  .btn-secondary:hover {
-    background-color: #ca3e63;
-  }

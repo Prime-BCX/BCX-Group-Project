@@ -36,22 +36,23 @@ function ConfirmYourDetailsPage() {
 
     return (
         <div className="container">
-            <h2>Confirm Your Details</h2>
+            <p></p>
+            <p> </p>
+            <h3>Confirm Your Details</h3>
             <h3>Does this all look correct?</h3>
-
             {/* Display the user information */}
-            <ul>
-                <li>Email: {tempUser.email}</li>
-                <li>First Name: {tempUser.firstName}</li>
-                <li>Last Name: {tempUser.lastName}</li>
-                <li>Timezone: {tempUser.timezone}</li>
-            </ul>
+
+            <p>Email: {tempUser.email}</p>
+            <p>First Name: {tempUser.firstName}</p>
+            <p>Last Name: {tempUser.lastName}</p>
+            <p>Timezone: {tempUser.timezone}</p>
+
 
 
             <div className="grid-col grid-col_4">
             <div>
             <button
-                onClick={() => history.push('/registration')} // Navigate to RegisterPage
+                onClick={() => history.push('/register')} // Navigate to RegisterPage
             > Edit
             </button>
             <button
@@ -60,6 +61,8 @@ function ConfirmYourDetailsPage() {
             </button>
         </div>
             </div>
+          
+
         </div>
     );
 }
