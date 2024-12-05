@@ -88,7 +88,7 @@ async function runReminders(reminderHours) {
   const reminderQueryText = `
     SELECT u.id, u.email, u.first_name, u."dayEndTime", u.notify, up.step
     FROM "user" u
-    JOIN "userprogress" up ON u.id = up.id
+    JOIN "userProgress" up ON u.id = up.id
     WHERE u."dayEndTime" = $1 AND u.notify = true
     AND (
     SELECT 
@@ -98,7 +98,7 @@ async function runReminders(reminderHours) {
         CASE WHEN dh.daily_focus THEN 1 ELSE 0 END +
         CASE WHEN dh.daily_nourish THEN 1 ELSE 0 END +
         CASE WHEN dh.daily_dinner THEN 1 ELSE 0 END
-      FROM "dailyhabits" dh 
+      FROM "dailyHabits" dh 
       WHERE dh.user_id = 1
     ) < up.step;`
 
@@ -129,7 +129,7 @@ async function runEndOfDay(currentHourUtc) {
     const res = await pool.query(`
       SELECT u.id, u.email, u."dayEndTime", up.step, up.warning
       FROM "user" u
-      JOIN "userprogress" up ON u.id = up.id
+      JOIN "userProgress" up ON u.id = up.id
       WHERE u."dayEndTime" = $1
     `, [currentHourUtc]);
 
@@ -162,21 +162,21 @@ async function checkHabits(userId) {
       CASE WHEN dh.daily_nourish THEN 1 ELSE 0 END +
       CASE WHEN dh.daily_dinner THEN 1 ELSE 0 END
       AS total
-    FROM "dailyhabits" dh
+    FROM "dailyHabits" dh
     WHERE dh.user_id = $1
   `, [userId]);
   return habitRes.rows[0].total;
 }
 
 async function punishUser(userId){
-  const missedDayRes = await pool.query(`SELECT missed_days FROM userprogress WHERE id = $1`, [userId]);
+  const missedDayRes = await pool.query(`SELECT missed_days FROM userProgress WHERE id = $1`, [userId]);
   const missedDays = missedDayRes.rows[0].missed_days;
   if(missedDays === 2){
     console.log(`user ${userId} missed 3 days!`)
-    await pool.query(`UPDATE userprogress SET day=1, step = 1, missed_days = 0 WHERE id = $1`, [userId]);
+    await pool.query(`UPDATE userProgress SET day=1, step = 1, missed_days = 0 WHERE id = $1`, [userId]);
   }
   else{
-    await pool.query(`UPDATE userprogress
+    await pool.query(`UPDATE userProgress
       SET day = CASE 
             WHEN (step - 1) * 10 = 0 THEN 1
             ELSE (step - 1) * 10
@@ -186,12 +186,12 @@ async function punishUser(userId){
 }
 
 async function warnUser(userId){
-  await pool.query(`UPDATE userprogress SET warning=true WHERE id = $1`, [userId]);
+  await pool.query(`UPDATE userProgress SET warning=true WHERE id = $1`, [userId]);
 }
 
 async function resetHabitsForUser(userId) {
   await pool.query(`
-    UPDATE "dailyhabits"
+    UPDATE "dailyHabits"
     SET daily_hydrate = false, daily_grow = false, daily_move = false, 
         daily_focus = false, daily_nourish = false, daily_dinner = false
     WHERE user_id = $1
@@ -200,7 +200,7 @@ async function resetHabitsForUser(userId) {
 
 async function increaseDayForUser(userId) {
   const res = await pool.query(`
-      UPDATE "userprogress"
+      UPDATE "userProgress"
       SET day = day + 1
       WHERE id = $1
       RETURNING day
@@ -211,7 +211,7 @@ async function increaseDayForUser(userId) {
   if (newDay % 10 === 0) {
     const newStep = Math.min(((newDay / 10) + 1), 6); //set step to correct value, either i.e. step 2 for day 10, or step 6 if new day > 50
     await pool.query(`
-        UPDATE "userprogress"
+        UPDATE "userProgress"
         SET step = $2
         WHERE id = $1
       `, [userId, newStep]);
