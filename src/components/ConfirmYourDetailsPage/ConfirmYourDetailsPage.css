@@ -10,7 +10,7 @@ Responsive Grid: One Column Default, Two Columns When Space Allows
   align-items: center;
   background-color: #1e3a8a; /* Blue background */
   color: white; /* White text */
-  padding: 20px 20px 40px; /* Increase bottom padding */
+  padding: 20px 20px 0px; /* Increase bottom padding */
   height: 240px;
   width: 300px;
   text-align: center;

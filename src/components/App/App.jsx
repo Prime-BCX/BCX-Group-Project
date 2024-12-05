@@ -33,6 +33,8 @@ import ChecklistPage from '../ChecklistPage/ChecklistPage';
 
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
+import StepStarterVideo from '../StepStarterVideo/StepStarterVideo';
+import WhatsNext from '../WhatsNext/WhatsNext';
 
 function App() {
   const dispatch = useDispatch();
@@ -76,38 +78,51 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          {/* Photo Upload */}
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+          <ProtectedRoute            
             exact
             path="/PhotoUpload/:id"
           >
-            <PhotoUpload />
+            <PhotoUpload/>
           </ProtectedRoute>
 
-          {/* End of Step */}
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+          <ProtectedRoute            
             exact
             path="/EndOfStepView"
           >
-            <EndOfStepView />
+            <EndOfStepView/>
+          </ProtectedRoute>  
+          <ProtectedRoute            
+            exact
+            path="/WhatsNext"
+          >
+            <WhatsNext/>
+          </ProtectedRoute>  
+          <ProtectedRoute            
+            exact
+            path="/InstagramView/:id"
+          >
+            <InstagramView/>
           </ProtectedRoute>
 
-          {/* Video Player */}
+          <ProtectedRoute            
+            exact 
+            path="/StepStarterVideo/:id"
+          >
+            <StepStarterVideo/>
+          </ProtectedRoute>    
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+           
             exact
-            path="/VideoPlayer"
+            path="/VideoPlayer/"
           >
             <VideoPlayer />
           </ProtectedRoute>
 
           {/* Video Launcher */}
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+          
             exact
-            path="/VideoLauncher"
+            path="/VideoLauncher/:id"
           >
             <VideoLauncher />
           </ProtectedRoute>

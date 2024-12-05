@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './ConfirmYourDetailsPage.jsx';
+import './ConfirmYourDetailsPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -8,6 +8,8 @@ function ConfirmYourDetailsPage() {
     const history = useHistory();
     const tempUser = useSelector(state => state.userConfirmReducer)
     const dispatch = useDispatch();
+    
+    // Can this handle navigate be delayed until USER in logged in?
     const handleNavigate = (event) => {
         registerUser(event)
         history.push('../user');

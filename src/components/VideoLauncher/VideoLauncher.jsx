@@ -1,42 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom"; 
+import React from "react";
+import VideoCreater from "../VideoCreater/VideoCreater";
 import './VideoLauncher.css';
-import VideoPlayer from '../VideoPlayer/VideoPlayer'; 
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function VideoLauncher() {
-  const [videoUrl, setVideoUrl] = useState(null); 
-  const history = useHistory(); 
-
-  // Fetch video URL from the server on component mount
-  useEffect(() => {
-    const fetchVideoUrl = async () => {
-        const response = await fetch('http://localhost:5001/api/phases/video-url');
-        const data = await response.json();
-          setVideoUrl(data.videoUrl); // Set the fetched video URL
-    };
-    fetchVideoUrl(); // Fetch video URL when the component mounts
-  }, []);
-  const handleStartPhase1 = () => {
-
-  };
+  const history = useHistory();
+  const { id } = useParams();
+  const goToInstagram = () => {
+    history.push(`/InstagramView/${id}`);
+  }
 
   return (
-    
     <div className="video-launcher-container">
-        <button className="start-phase1-btn" onClick={handleStartPhase1}>
-        Start Phase 1
-      </button>
-      <div className="faq-link-container">
-        <a href="/faq" className="faq-link">BCX Challenge FAQ</a>
-      </div>
-      {videoUrl && (
-        <div className="video-section">
-          <VideoPlayer videoUrl={videoUrl} /> {/* passing the video URL to the VideoPlayer component */}
+      <VideoCreater />
+      <div className="bottom">
+        <button className="btn" onClick={goToInstagram}>
+          START THE CHALLENGE
+        </button>
+        <div className="faq-link-container">
+          <a href="/faq" className="faq-link">BCX Challenge FAQ</a>
         </div>
-      )}
-
-    
-      
+      </div>
     </div>
   );
 }
