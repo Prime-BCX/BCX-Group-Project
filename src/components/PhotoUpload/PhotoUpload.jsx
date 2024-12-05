@@ -38,7 +38,7 @@ function PhotoUpload() {
     formData.append("day", 1);
 
     // Send the file to the backend
-    fetch("http://localhost:5001/api/upload", {
+    fetch("http://localhost:5001/api/upload/upload", {
       method: "POST",
       body: formData,
     })
