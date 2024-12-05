@@ -57,6 +57,7 @@ app.use('/api/userImage', userImage);
 app.use('/api/phases', phasesRouter);
 app.use('/api/steps', stepsRouter);
 
+
 cron.schedule('0 * * * *', async () => {
 
   const now = new Date();

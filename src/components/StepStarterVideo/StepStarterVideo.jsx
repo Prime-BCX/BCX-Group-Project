@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-
+import './StepStarterVideo.css';
 
 function StepStarterVideo() {
   const { id } = useParams(); 
@@ -26,19 +26,18 @@ function StepStarterVideo() {
       dispatch({ type: 'FETCH_STEPS', payload: stepId }); // Fetch step data
     }
   }, [dispatch, userProgress]);
-
-  //const currentStep = stepData
-  //console.log('Current step data:', currentStep);
-//console.log('my step',stepData.stepData.step_text)
+  
+  
   return (
     <div className="video-launcher-container">
         <VideoPlayer videoUrl={stepData.videoUrl} />
-     
-      <div className="step-info">
-        <h3>Step{stepData.stepid}: {stepData.step_text}</h3>
-      </div>
+        
+      
 
       <div className="bottom">
+      <div className="step-info">
+        <h3>Step{stepData.stepData.stepid}: {stepData.stepData.step_text}</h3>
+      </div>
         <button className="btn">
           START STEP {stepData.stepid}
         </button>

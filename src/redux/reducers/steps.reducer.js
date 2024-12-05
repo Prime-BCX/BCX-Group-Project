@@ -7,7 +7,7 @@ const stepsReducer = (state = initialState, action) => {
       case "SET_STEPS":
         return {
           ...state,
-          steps:action.payload
+          steps:action.payload,
         };
       default:
         return state;
