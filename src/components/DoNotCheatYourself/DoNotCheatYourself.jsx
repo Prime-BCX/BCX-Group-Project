@@ -13,8 +13,7 @@ function DoNotCheatYourself() {
 
             <p className="button-container">
                 <ButtonToGo label="START OVER" path="/BCXDayScreen" />
-                <ButtonToGo label="KEEP GOING" path="/main" />
-            </p>
+c            </p>
         </div>
 
     )

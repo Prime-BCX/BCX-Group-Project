@@ -23,7 +23,9 @@ function WhatsNext() {
             <div className="bottom">
                 <h2 className="style">WHAT'S NEXT?</h2>
 
-                <ButtonToGo label="I COMPLETED BCX!" path="/RepeatOrRestart" />
+                <ButtonToGo 
+                label="I COMPLETED BCX!" 
+                path="/RepeatOrRestart" />
 
             </div>
 

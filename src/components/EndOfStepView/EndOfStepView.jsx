@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProgressBar from '../ProgressBar/ProgressBar';  // Import the ProgressBar component
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import ButtonToGo from "../ButtonToGo/ButtonToGo";
 function EndOfStepView() {
     const progressList = useSelector((store) => store.userProgressReducer.progress);
     const [isComplete, setIsComplete] = useState(false);
@@ -94,10 +95,10 @@ function EndOfStepView() {
                         onChange={handleFileChange}
                         required
                     />
-                    <button
-                     className="submit-button" type="submit">
-                        Submit Your Photo
-                    </button>
+                    <ButtonToGo
+                     className="submit-button" type="submit"
+                        label='Submit Your Photo'>
+                        </ButtonToGo>
                 </form>
             </div>
 

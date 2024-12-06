@@ -2,20 +2,19 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import ButtonToGo from "../ButtonToGo/ButtonToGo";
 
 function StepStarterVideo() {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const dispatch = useDispatch();
-  const history = useHistory();
   const userProgress = useSelector((store) => store.userProgressReducer.progress);
   const stepData = useSelector((store) => store.stepsReducer.steps);
-  console.log ('stepdata', stepData)
-  
+  console.log('stepdata', stepData)
+
   useEffect(() => {
-    console.log ('Ima here')
+    console.log('Ima here')
     // Dispatch action to fetch user progress for the given step id
-  console.log('id at step started before sending', id)
+    console.log('id at step started before sending', id)
     dispatch({ type: 'FETCH_USER_PROGRESS', payload: id });
   }, [dispatch, id]);
 
@@ -27,26 +26,25 @@ function StepStarterVideo() {
     }
   }, [dispatch, userProgress]);
 
-  const goToStepStarterPage = () => {
-    history.push(`/main`);
-  }
-
   //const currentStep = stepData
   //console.log('Current step data:', currentStep);
-//console.log('my step',stepData.stepData.step_text)
+  //console.log('my step',stepData.stepData.step_text)
   return (
     <div className="video-launcher-container">
-        <VideoPlayer videoUrl={stepData.videoUrl} />
-     
+      <VideoPlayer videoUrl={stepData.videoUrl} />
+
       <div className="step-info">
         <h3>Step{stepData.stepid}: {stepData.step_text}</h3>
       </div>
 
       <div className="bottom">
-        <button className="btn" 
-          onClick={goToStepStarterPage}>
-          START STEP {stepData.stepid}
-        </button>
+        
+        <ButtonToGo
+          label={`START STEP ${stepData.stepid}`}
+          path="/main" />
+
+
+
         <div className="faq-link-container">
           <a href="/faq" className="faq-link">BCX Challenge FAQ</a>
         </div>

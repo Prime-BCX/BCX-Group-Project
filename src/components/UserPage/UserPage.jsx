@@ -12,7 +12,7 @@ function UserPage() {
     <div className="userPageContainer">
       {/* Personalized Welcome Message with clickable text link */}
       <h2>
-        Welcome,{' '} 
+        Welcome, {user.first_name} 
         <Link to={`/PhotoUpload/${user.id}`}>
         <h2>Click here</h2>
         <h2>begin your Journey!</h2>
