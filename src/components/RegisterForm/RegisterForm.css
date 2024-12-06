@@ -7,7 +7,7 @@
   background-color: #ffffff; /* White background */
 }
 
-.headingg {
+.heading {
   font-size: 36px; /* Larger, bold heading */
   color: #E73C71; /* Dark Blue */
   margin-bottom: 20px;
@@ -36,9 +36,7 @@
 label {
   flex: 1;
   font-size: 16px;
-  color: #E73C71; /* Vibrant pink */
-  /* color: #f2e2ef;  */
-
+  color: #f2e2ef;
   text-align: right;
   margin-right: 20px;
   white-space: nowrap;
@@ -46,7 +44,7 @@ label {
 }
 
 input,
-.dropbtun {
+.dropbtn {
   flex: 2;
   padding: 10px;
   font-size: 16px;

@@ -1,16 +1,19 @@
-import ButtonToGo from '../ButtonToGo';
-import image from './fadedRandomDayImage.jpeg';
+import ButtonToGo from '../ButtonToGo/ButtonToGo';
 
-<div>
-<h2> You Are Showing Integrity </h2>
-<p> Starting over takes strength. You're showing integrity and taking ownership of your journey - this is what real progress looks like. Keep going with purpose.
-</p>
+function ShowingIntegrity() {
+    return (
 
-<img src={image} alt="Faded Random Day Image" />
+        <div className="container">
+            <h3> You Are Showing Integrity </h3>
+            <p> Starting over takes strength. You're showing integrity and taking ownership of your journey - this is what real progress looks like. Keep going with purpose.
+            </p>
 
-<ButtonToGo label="OOPS! I DID FINISH" path="../___________"/>
-<ButtonToGo label="START OVER" path="../___________"/>
+            {/* <img src="../../Images/MissedDayImage.jpeg" alt="Faded Random Day Image" /> */}
 
-</div>
+            <ButtonToGo label="OOPS! I DID FINISH" path="../ChecklistComponents__" />
+            <ButtonToGo label="START OVER" path="../ChecklistComponents__" />
 
-export default MissedDayView;
+        </div>
+    )
+}
+export default ShowingIntegrity;

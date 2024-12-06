@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './RegisterPage.css';
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
@@ -7,7 +7,7 @@ function RegisterPage() {
   const history = useHistory();
 // console.log ("Hit registration")
   return (
-    <div>
+    <div className="container">
       <RegisterForm />
 
       <center>
@@ -18,7 +18,8 @@ function RegisterPage() {
             history.push('/login');
           }}
         >
-          Already Have an Account
+          Existing Account? 
+          Click Here.
         </button>
       </center>
     </div>

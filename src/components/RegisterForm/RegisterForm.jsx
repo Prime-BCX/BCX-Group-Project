@@ -70,13 +70,13 @@ function RegisterForm() {
   const history = useHistory();
   const handleNavigate = (event) => {
     setTempUser(event)
-    { history.push('/confirm') }
+    { history.push('/ConfirmYourDetailsPage') }
   }
 
   return (
-    <div className="container">
-   <form className="formPanel" onSubmit={handleNavigate}>
-      <h2 className="headingg">Register User</h2>
+
+    <form className="formPanel" onSubmit={handleNavigate}  >
+      <h2>Please Register</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
@@ -129,14 +129,13 @@ function RegisterForm() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <div className="formhGroup">
+      <div className="formGroup">
         <label htmlFor="timezone">Timezone:</label>
         <div className="dropdown">
           <button 
             type="button" 
             onClick={toggleDropdown} 
-            className="dropbtun"  
-        
+            className="dropbtn"  
           >
             {timezone || 'Select Timezone'}
           </button>
@@ -144,10 +143,10 @@ function RegisterForm() {
           {dropdownOpen && (
             <div className="dropdown-content">
               <ul>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('EST'); }}>EST</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('CST'); }}>CST</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('MST'); }}>MST</a></li>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); handleTimezoneSelect('PST'); }}>PST</a></li>
               </ul>
             </div>
             
@@ -160,11 +159,10 @@ function RegisterForm() {
           className="butn"
           type="submit"
           name="submit"
+          onClick={handleNavigate}
           value="Register">Submit</button>
       </div>
     </form>
-    </div>
-
 
   )};
 
