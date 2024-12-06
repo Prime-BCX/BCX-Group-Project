@@ -26,4 +26,17 @@ router.get("/:id", rejectUnauthenticated, (req, res) => {
       res.sendStatus(500); // Send an error response
     });
 });
+
+router.post('/setstep', (req, res) => {
+  try{
+    const passedId = req.body.id;
+    const passedStep = req.body.step;
+    const setStepQuery = `UPDATE "userProgress" SET step = $2 WHERE id = $1`;
+    pool.query(setStepQuery, [passedId, passedStep])
+    .then(res.send(201))
+    .catch((err) => {console.log('error setting step', err)});
+  } catch (err) {console.log('error running set route step', err)};
+
+  
+})
 module.exports = router;
