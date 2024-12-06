@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import VideoPlayer from '../VideoPlayer/VideoPlayer'; 
 
-function VideoCreater(){
+function VideoCreator(){
     const [videoUrl, setVideoUrl] = useState(null); 
   const history = useHistory(); 
   // Fetch video URL from the server on component mount
@@ -39,4 +39,4 @@ return(
 
 }
 
-export default VideoCreater
+export default VideoCreator

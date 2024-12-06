@@ -1,5 +1,5 @@
 import React from "react";
-import VideoCreater from "../VideoCreater/VideoCreater";
+import VideoCreator from "../VideoCreator/VideoCreator";
 import './VideoLauncher.css';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
@@ -13,7 +13,7 @@ function VideoLauncher() {
 
   return (
     <div className="video-launcher-container">
-      <VideoCreater />
+      <VideoCreator />
       <div className="bottom">
         <button className="btn" onClick={goToInstagram}>
           START THE CHALLENGE
