@@ -1,30 +1,34 @@
 // This view promotes the use of Instagram to share the user's progress.
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
 import "./InstagramView.css"
-// Declare label and path variables directly inline as props.
-// In this file - see line 16 <ButtonToGo...
-// import image from './images/BCX_and_Instagram.jpeg';
 
 
+import React from 'react';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 function InstagramView() {
-    return (
-        <div className="container">
-            <h3>  Easily share your
-                progress to
-                Instagram Stories
-                straight from
-                the BCX 100 app!
-            </h3>
+  const { id } = useParams();
 
-            {/* <img src="/" alt="BCX and Instagram" /> */}
+  
+  return (
+    <div>
+      <h2>
+        Easily share your
+        progress to
+        Instagram Stories
+        straight from
+        the BCX 100 app!
+      </h2>
 
-            <div className="button-container">
-                <ButtonToGo label="START PHASE ONE" path="../VideoLauncher" />
-            </div>
-        </div>
+      <img src='./images/BCX_and_Instagram.jpeg' alt="BCX and Instagram" />
 
-    )
+      <ButtonToGo path={`/StepStarterVideo/${id}`}
+      label= 'START PHASE ONE' />
+
+
+    </div>
+
+  )
 }
 
 export default InstagramView;

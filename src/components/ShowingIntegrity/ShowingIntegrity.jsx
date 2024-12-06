@@ -1,6 +1,9 @@
 import ButtonToGo from '../ButtonToGo/ButtonToGo';
+import { useParams } from "react-router-dom";
 
 function ShowingIntegrity() {
+    const { id } = useParams(); 
+
     return (
 
         <div className="container">
@@ -10,8 +13,8 @@ function ShowingIntegrity() {
 
             {/* <img src="../../Images/MissedDayImage.jpeg" alt="Faded Random Day Image" /> */}
 
-            <ButtonToGo label="OOPS! I DID FINISH" path="../ChecklistComponents__" />
-            <ButtonToGo label="START OVER" path="../ChecklistComponents__" />
+            <ButtonToGo label="OOPS! I DID FINISH" path="/main" />
+            <ButtonToGo label="START OVER" path={`/StepStarterVideo/${id}`}/>
 
         </div>
     )
