@@ -28,7 +28,7 @@ function StepStarterVideo() {
   }, [dispatch, userProgress]);
 
   const goToStepStarterPage = () => {
-    history.push(`/StepStarterVideo/${id}`);
+    history.push(`/main`);
   }
 
   //const currentStep = stepData
