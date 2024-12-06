@@ -6,7 +6,8 @@ import userProgressSaga from './userprogress.saga';
 import userImageSaga from './userimage.saga';
 import userConfirmSaga from './userconfirm.saga';
 import phasesSaga from './phases.saga';
-import dailyHabitsSaga from './dailyHabits.saga'; // Import new saga
+import stepsSaga from './steps.saga';
+// import dailyHabitsSaga from './dailyHabits.saga'; // Import new saga
 
 export default function* rootSaga() {
   yield all([
@@ -17,6 +18,7 @@ export default function* rootSaga() {
     userProgressSaga(),
     userImageSaga(),
     phasesSaga(),
-    dailyHabitsSaga(), // Add daily habits saga
+    stepsSaga(),
+    // dailyHabitsSaga(), // Add daily habits saga
   ]);
 }

@@ -12,8 +12,8 @@ function RepeatOrRestart() {
 
             {/* <img src={image} alt="Faded Random Day Image" /> */}
 
-            <ButtonToGo label="REPEAT PHASE 2" path="../___________" />
-            <ButtonToGo label="RESTART PHASE 1" path="../___________" />
+            <ButtonToGo label="REPEAT PHASE 1" path="/InstagramView" />
+            <ButtonToGo label="RESTART PHASE 2" path="/main" />
 
         </div>
     )

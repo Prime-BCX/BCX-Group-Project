@@ -17,7 +17,7 @@ router.get("/:id", rejectUnauthenticated, (req, res) => {
     .query(queryText, values)
     .then((results) => {
       // Log the result rows to the console
-      console.log('Query results:', results.rows);  // Log the results rows here
+      //console.log('Query results:', results.rows);  // Log the results rows here
 
       res.send(results.rows);  // Send back the query results to the client
     })

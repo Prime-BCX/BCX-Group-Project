@@ -15,7 +15,8 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const userProgress = require('./routes/userprogress.router');
 const userImage = require('./routes/userimage.router');
-const phasesRouter = require('./routes/phases.router');
+const phasesRouter = require('./routes/phases.router'); 
+const stepsRouter = require('./routes/steps.router');
 const uploadRouter = require ('./routes/uploadfile.router');
 
 // Enable CORS middleware before your routes
@@ -55,6 +56,7 @@ app.use('/api/user', userRouter);
 app.use('/api/userprogress', userProgress);
 app.use('/api/userImage', userImage);
 app.use('/api/phases', phasesRouter);
+app.use('/api/steps', stepsRouter);
 app.use('/api/upload', uploadRouter);
 
 cron.schedule('0 * * * *', async () => {

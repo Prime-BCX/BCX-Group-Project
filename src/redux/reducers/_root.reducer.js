@@ -4,6 +4,7 @@ import user from './user.reducer';
 import userProgressReducer from './userProgress.reducer';
 import userConfirmReducer from './userConfirm.reducer';
 import phasesReducer from './phases.reducer';
+import stepsReducer from './steps.reducer';
 import dailyHabitsReducer from './dailyHabits.reducer'; // Import new reducer
 
 const rootReducer = combineReducers({
@@ -12,7 +13,9 @@ const rootReducer = combineReducers({
   userProgressReducer,
   userConfirmReducer,
   phasesReducer,
-  dailyHabitsReducer, // Add daily habits reducer
+  dailyHabitsReducer, // Add daily habits reducer,
+  stepsReducer,
+
 });
 
 export default rootReducer;
