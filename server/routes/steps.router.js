@@ -46,6 +46,9 @@ router.get('/:stepId', async (req, res) => {
         case '5': // NOURISH
           videoPath = 'BCX_Videos/Nourish/NourishVideo.mp4';
           break;
+          case '6': //Phase2
+          videoPath = 'BCX_Videos/Phase2/Phase2Video.mp4';
+          break;
         default:
           return res.status(404).send('Step video not found for the provided stepId');
       }

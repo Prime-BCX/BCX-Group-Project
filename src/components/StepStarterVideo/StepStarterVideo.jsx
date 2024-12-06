@@ -32,11 +32,11 @@ function StepStarterVideo() {
     <div className="video-launcher-container">
         <VideoPlayer videoUrl={stepData.videoUrl} />
         
-      
+     
 
       <div className="bottom">
       <div className="step-info">
-        <h3>Step{stepData.stepData.stepid}: {stepData.stepData.step_text}</h3>
+        <h3>Step {stepData?.stepData?.stepid}: {stepData?.stepData?.step_text} </h3>
       </div>
         <button className="btn">
           START STEP {stepData.stepid}
