@@ -30,14 +30,15 @@ import BCXDayScreen from '../BCXDayScreen/BCXDayScreen';
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
-
-import ButtonToGo from '../ButtonToGo/ButtonToGo';
-import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
+// import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
+// For Navigation Buttons:
+// import NavigationButtons from '../NavigationButtons/NavigationButtons';
+// import ButtonToGo from '../ButtonToGo/ButtonToGo';
+import PhaseOnePage from '../RegisterForm/RegisterForm';   // Placeholder to avoid undefined here
 
 function App() {
   const dispatch = useDispatch();
-
-  const user = useSelector(store => store.user);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -112,11 +113,8 @@ function App() {
             <VideoLauncher />
           </ProtectedRoute>
 
-          {/* BCXDayScreen */}
-          <Route
-            exact
-            path="/BCXDayScreen"
-          >
+          {/* Route for BCX Day Screen */}
+          <Route exact path="/bcx-day-screen">
             <BCXDayScreen />
           </Route>
           
@@ -222,13 +220,19 @@ function App() {
             <ChecklistPage />
           </Route>
 
-
-
+          {/* For Navigation Buttons */}
+          <Route>
+            <div>
+              {/* <NavigationButtons /> */}
+              <Route path="../RegisterPage" element={<RegisterPage />} />
+              <Route path="../PhotoUpload" element={<PhotoUpload />} />
+            </div>
+          </Route>
 
           {/* Navigate to PhaseOnePage */}
           <Route>
             <div>
-              <ButtonToGo />
+              {/* <ButtonToGo /> */}
               <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
 
             </div>
@@ -239,12 +243,11 @@ function App() {
           <Route path='*'>
             <h1>404</h1>
           </Route>
-
         </Switch>
         <Footer />
       </div>
-
     </Router>
   );
 }
+
 export default App;
