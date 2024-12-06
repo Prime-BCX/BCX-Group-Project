@@ -29,7 +29,7 @@ router.post('/register', (req, res, next) => {
   const queryText = `INSERT INTO "user" (email,first_name,last_name,password)
     VALUES ($1, $2, $3, $4) RETURNING id`;
   const progressText = `INSERT INTO "userProgress" (id, day, step, missed_days, warning)
-    VALUES ($1, 1, 1, 0, false) RETURNING id`;
+    VALUES ($1, 1, 0, 0, false) RETURNING id`;
   const habitsText = `INSERT INTO "dailyHabits" (user_id, date, daily_hydrate, daily_grow, daily_move, daily_focus, daily_nourish, daily_dinner) VALUES
     ($1, CURRENT_DATE, false, false, false, false, false, false)`;
     pool
