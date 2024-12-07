@@ -9,20 +9,18 @@ function InstagramView() {
 
 
   return (
-    <div>
+    <div className='Instagram-Parent-Container'>
       <div className='Instagram-Container'>
         <h2>Easily share your progress</h2>
         <h2>to Instagram Stories</h2>
         <h2>right from the BCX 100 app!</h2>
 
         <img src="/images/Instagram.jpg" alt="BCX and Instagram Image" />
-      </div>
+      
 
-      <div className='Instagram-Button-Container '>
-        <ButtonToGo
-          path={`/StepStarterVideo/${id}`}
-          label='START PHASE ONE' />
-
+          <ButtonToGo
+            path={`/StepStarterVideo/${id}`}
+            label='START PHASE ONE' />
       </div>
     </div >
 
