@@ -4,11 +4,10 @@
   flex-direction: column; /* Stack the title and links */
   justify-content: flex-start;
   align-items: center;
-  margin: 0 0 90px;
+  margin: 0px;
   background-color: #163b8b;
   overflow: hidden;
-  border-radius: 20px 40px 0px 0px; /* Round top-left and top-right corners */
-
+  border-radius: 70px 50px 0px 0px; /* Round top-left and top-right corners */
 }
 
 /* Title Styling */
