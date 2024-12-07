@@ -34,16 +34,14 @@ function StepStarterVideo() {
       <VideoPlayer videoUrl={stepData.videoUrl} />
 
       <div className="step-info">
-        <h3>Step{stepData.stepid}: {stepData.step_text}</h3>
+        <h3>Step{stepData.stepId}: {stepData.step_text}</h3>
       </div>
 
       <div className="bottom">
         
         <ButtonToGo
-          label={`START STEP ${stepData.stepid}`}
+          label={`START STEP ${stepData.stepId}`}
           path="/main" />
-
-
 
         <div className="faq-link-container">
           <a href="/faq" className="faq-link">BCX Challenge FAQ</a>

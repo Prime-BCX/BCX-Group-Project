@@ -9,7 +9,7 @@ const {
 router.get("/:id", rejectUnauthenticated, (req, res) => {
   const userId = req.params.id; // Get the ID from the URL
   //console.log('user id before query executes at router', userId);
-  const queryText = 'SELECT * FROM "userProgress" WHERE user_id = $1;';
+  const queryText = 'SELECT * FROM "userProgress" WHERE id = $1;';
   // Query to get the specific product
   const values = [userId]; // Parameterized query to prevent SQL injection
 

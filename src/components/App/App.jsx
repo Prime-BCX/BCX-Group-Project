@@ -30,16 +30,17 @@ import BCXDayScreen from '../BCXDayScreen/BCXDayScreen';
 import EndOfStepView from '../EndOfStepView/EndOfStepView';
 import './App.css';
 import ChecklistPage from '../ChecklistPage/ChecklistPage';
-
-import ButtonToGo from '../ButtonToGo/ButtonToGo';
-import PhaseOnePage from '../RegisterForm/RegisterForm';   // placeholder to avoid undefined here
+// import ConfirmYourDetailsPage from '../ConfirmYourDetailsPage/ConfirmYourDetailsPage';
+// For Navigation Buttons:
+// import NavigationButtons from '../NavigationButtons/NavigationButtons';
+// import ButtonToGo from '../ButtonToGo/ButtonToGo';
+import PhaseOnePage from '../RegisterForm/RegisterForm';   // Placeholder to avoid undefined here
 import StepStarterVideo from '../StepStarterVideo/StepStarterVideo';
 import WhatsNext from '../WhatsNext/WhatsNext';
 
 function App() {
   const dispatch = useDispatch();
-
-  const user = useSelector(store => store.user);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -244,17 +245,34 @@ function App() {
             <ChecklistPage />
           </Route>
 
+          {/* For Navigation Buttons */}
+          <Route>
+            <div>
+              {/* <NavigationButtons /> */}
+              <Route path="../RegisterPage" element={<RegisterPage />} />
+              <Route path="../PhotoUpload" element={<PhotoUpload />} />
+            </div>
+          </Route>
 
-          {/* Error 404:If none of the other routes matched, we will show a 404. */}
+          {/* Navigate to PhaseOnePage */}
+          <Route>
+            <div>
+              {/* <ButtonToGo /> */}
+              <Route path="../PhaseOnePage" element={<PhaseOnePage />} />
+
+            </div>
+          </Route>
+
+
+          {/* If none of the other routes matched, we will show a 404. */}
           <Route path='*'>
             <h1>Error: 404</h1>
           </Route>
-
         </Switch>
         <Footer />
       </div>
-
     </Router>
   );
 }
+
 export default App;
