@@ -59,10 +59,10 @@ function ConfirmYourDetailsPage() {
                         label='Edit'
                         className='confirm-pink-button'>
                     </ButtonToGo>
-                    <ButtonToGo
+                    <button
                         onClick={handleNavigate}
-                        label='Looks Good!'>
-                    </ButtonToGo>
+                        label='Looks Good!'>Looks Good!
+                    </button>
                 </div>
             </div>
 
