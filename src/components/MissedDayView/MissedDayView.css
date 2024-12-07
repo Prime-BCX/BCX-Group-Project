@@ -1,56 +1,72 @@
-/* --------------------------------------------------------------------------------
-Responsive Grid: One Column Default, Two Columns When Space Allows
--------------------------------------------------------------------------------- */
+.missed {
+  color: #1e3a8a;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 
-/* Grid Container */
-.container {
+}
+
+.background {
+
+  background-image: url('../../../public/images/MissedDayImage.jpg');
+  background-size: 430px 932px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 932px;
+  width: 430px;
+  margin: 0;
+  padding-top: 0px;
+
+}
+
+.Missed-Container {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1e3a8a; /* Blue background */
-  color: white; /* White text */
-  padding: 20px 20px 40px; /* Increase bottom padding */
-  height: 240px;
-  width: 300px;
+  /* Blue background */
+  color: #ffffff;
+  /* White text */
+  padding: 20px 20px 40px;
+  /* Increase bottom padding */
   text-align: center;
   /* background-image: url('../../images/MissedDayImage.jpeg'); */
-  border-radius: 10%;
+  border-radius: 10% 10%;
   /* margin-left: 20px; */
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
-/* Buttons container */
-.button-container {
-  display: flex;
-  justify-content: center; /* Centers the buttons horizontally */
-  align-items: center;
-  gap: 20px; /* Adds space between buttons */
-  margin-top: 20px; /* Optional: Adds space above the buttons */
+.btn-to-go {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 16px;
+  margin-left: 50px;
+  margin-top: 30px;
+  height: 50px;
+  width: 250px;
+  background-color: #da3993;
+  color: white;
+}
 
-  /* .background {
-    background-image: url('/images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100%; */
+.btn-to-go:hover {
+  background-color: #ca3e63;
+}
+
+
+#WH {
+  background-color: transparent;
+  font-size: 30px;
+  color: #1e3a8a
   }
-}
 
-/* Grid Column */
-.grid-col {
-  flex: 1 0 100%; /* Default: Full width (one column) */
-  padding: 0.5rem; /* Add padding for spacing */
-  box-sizing: border-box;
-  background-color: #f4f4f4; /* Light gray background for visibility */
-  border: 1px solid #ccc; /* Border for better visualization */
-  text-align: center; /* Center-align content */
-}
-
-/* Two-Column Layout: Switch to two columns when the screen is wider */
-/*@media (min-width: 600px) {
-  .grid-col {
-    flex: 1 0 50%; /* Half-width for two columns */
-    /* max-width: 50%;  */
+  #PWH {
+    color: black;
+    font-style: italic;
+    font-size: 14px;
+  }
