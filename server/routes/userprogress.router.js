@@ -33,10 +33,23 @@ router.post('/setstep', (req, res) => {
     const passedStep = req.body.step;
     const setStepQuery = `UPDATE "userProgress" SET step = $2 WHERE id = $1`;
     pool.query(setStepQuery, [passedId, passedStep])
-    .then(res.send(201))
+    .then(res.sendStatus(201))
     .catch((err) => {console.log('error setting step', err)});
   } catch (err) {console.log('error running set route step', err)};
+})
 
+router.post('/setHabit', (req, res) => {
+  const changedHabit = req.body.habit;
+  const changeTF = req.body.truefalse;
+  const changedUser = req.body.id;
+  const allowedHabits = ['daily_hydrate', 'daily_grow', 'daily_move', 'daily_focus', 'daily_nourish', 'daily_dinner'];
+  if (!allowedHabits.includes(changedHabit)){res.sendStatus(403)}
+  else{
+    const changeHabitQuery = `UPDATE "dailyHabits" SET "${changedHabit}" = $1 WHERE id = $2`;
+    pool.query(changeHabitQuery, [changedUser, changedHabit, changeTF])
+    .then(res.sendStatus(201))
+    .catch((err)=> {console.log('error changing habit', err)})
+  }
   
 })
 module.exports = router;
