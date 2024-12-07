@@ -6,12 +6,26 @@ h2 {
   font-size: 50px;
 }
 
-.Instagram-Container {
+#Instagram-Container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 240px;
+  color: #ffffff;
+  height: auto;
+  width: auto;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+#Instagram-Container p {
+font-size: 24px;
+line-height: 1.2rem;
+}
+
+.background-color{
   background-color: #1e3a8a;
-  height: 285px;
-  width: 430px;
-  text-align: center;
+  height: 532px;
 }
 
 .Instagram-Button-Container {
@@ -23,10 +37,15 @@ h2 {
   font-size: 16px;
   height: 50px;
   width: 250px;
-  background-color: #da3993;
   color: #ffffff;
 }
 
 .btn-to-go:hover {
   background-color: #ca3e63;
+}
+
+.image-container {
+display: flex; 
+margin: -10px;
+
 }

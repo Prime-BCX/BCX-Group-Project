@@ -14,7 +14,7 @@ function ButtonToGo({ label, path }) {
     return (
         <div>
             <button 
-            className="btn-to-go"
+            id="btn-to-go"
             onClick={() => history.push(path)}>
                 {label}
             </button>
