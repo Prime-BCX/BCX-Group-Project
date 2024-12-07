@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 function ChecklistList({day = 1})  {
     const [checkListDisabled, setCheckListDisabled] = useState([false, true, true, true, true, true, true]);
-
+    const history = useHistory();
     const user = useSelector((state) => state.user);
     const step = Math.floor(day / 10) + 1;
     const [enabledHabits, setEnabledHabits] = useState([]);
