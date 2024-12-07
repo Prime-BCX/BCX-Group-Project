@@ -77,6 +77,11 @@ function LoginForm() {
        
 
       </div>
+      <div className="create-profile-container">
+    <button className="create-profile-button" onClick={() => history.push('/register')}>
+      CREATE NEW PROFILE
+    </button>
+  </div>
     </form>
   );
 }

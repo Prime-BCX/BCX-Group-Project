@@ -38,7 +38,7 @@ function ConfirmYourDetailsPage() {
     };
 
     return (
-        <div className="container">
+        <div className="confirm-container">
             <p></p>
             <p> </p>
             <h3>Confirm Your Details</h3>
@@ -52,16 +52,17 @@ function ConfirmYourDetailsPage() {
 
 
 
-            <div className="grid-col grid-col_4">
+            <div className="confirm-grid-col grid-col_4 button-container">
                 <div>
                     <ButtonToGo
                         path='/register' // Navigate to RegisterPage
-                        label='Edit'>
+                        label='Edit'
+                        className='confirm-pink-button'>
                     </ButtonToGo>
-                    <ButtonToGo
+                    <button
                         onClick={handleNavigate}
-                        label='Looks Good!'>
-                    </ButtonToGo>
+                        label='Looks Good!'>Looks Good!
+                    </button>
                 </div>
             </div>
 

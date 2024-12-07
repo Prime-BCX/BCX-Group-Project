@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './ChecklistPage.css';
 import ChecklistProgressBar from './ChecklistComponents/ChecklistProgressBar'
 import ChecklistBlurb from './ChecklistComponents/ChecklistBlurb'
 import ChecklistList from './ChecklistComponents/ChecklistList';
+import { useSelector } from 'react-redux';
 function ChecklistPage() {
-    const day=18;
+    const userProgress = useSelector((store) => store.userProgressReducer.progress)
+    const day = userProgress[0].day
+    console.log(day);
     return(
         <div className='checklistContainer'>
             <span className='dayDisplay'>DAY {day} </span>

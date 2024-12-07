@@ -45,8 +45,9 @@ router.post('/setHabit', (req, res) => {
   const allowedHabits = ['daily_hydrate', 'daily_grow', 'daily_move', 'daily_focus', 'daily_nourish', 'daily_dinner'];
   if (!allowedHabits.includes(changedHabit)){res.sendStatus(403)}
   else{
-    const changeHabitQuery = `UPDATE "dailyHabits" SET "${changedHabit}" = $1 WHERE id = $2`;
-    pool.query(changeHabitQuery, [changedUser, changedHabit, changeTF])
+    const changeHabitQuery = `UPDATE "dailyHabits" SET "${changedHabit}" = $1 WHERE user_id = $2`;
+    pool.query(changeHabitQuery, [changeTF, changedUser])
+    .then(console.log('set habit!'))
     .then(res.sendStatus(201))
     .catch((err)=> {console.log('error changing habit', err)})
   }

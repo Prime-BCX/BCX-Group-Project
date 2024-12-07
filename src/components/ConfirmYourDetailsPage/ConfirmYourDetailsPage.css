@@ -3,7 +3,7 @@ Responsive Grid: One Column Default, Two Columns When Space Allows
 -------------------------------------------------------------------------------- */
 
 /* Grid Container */
-.container {
+.confirm-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,14 +31,13 @@ Responsive Grid: One Column Default, Two Columns When Space Allows
 }
 
 /* Grid Column */
-.grid-col {
+.confirm-grid-col {
   flex: 1 0 100%; /* Default: Full width (one column) */
   padding: 0.5rem; /* Add padding for spacing */
   box-sizing: border-box;
-  background-color: #f4f4f4; /* Light gray background for visibility */
-  border: 1px solid #ccc; /* Border for better visualization */
   text-align: center; /* Center-align content */
 }
+
 
 /* Two-Column Layout: Switch to two columns when the screen is wider */
 /*@media (min-width: 600px) {
