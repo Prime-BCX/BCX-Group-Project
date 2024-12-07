@@ -24,7 +24,6 @@ const ProgressBar = ({ value }) => {
   
 
     boxes.push(
-  
       <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '7px' }}>
         <div
           style={{
@@ -36,15 +35,15 @@ const ProgressBar = ({ value }) => {
             marginLeft:'-5px', 
           }}
         />
-          <span style={{ marginTop: '0px', fontSize: '10px',marginTop:'8px' }}>{label}</span>
+          <span style={{ fontSize: '10px',paddingTop:'10px', marginLeft:'15px' }}>{label}</span>
         
       </div>
-    
+     
     );
   
   }
 
-  return <div style={{ display: 'flex' }}>{boxes}</div>;
+  return <div style={{ display: 'flex', marginTop:'450px', backgroundColor:'rgba(255, 192, 203, 0.205)',height:'160px'}}>{boxes}</div>;
 };
 
 export default ProgressBar;
