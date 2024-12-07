@@ -70,13 +70,13 @@ function PhotoUpload() {
 
   return (
     <div>
-      <div className="mycontainer">
-        <h1>Phase 1: Build</h1>
+      <div className="mycontainer" >
+        <h1 style={{marginLeft:'10px'}}>Phase 1: Build</h1>
       </div>
 
-      <div className="photo-upload-container">
-        <h3>Start Building Your Best Self</h3>
-        <p>Your journey to empowerment, confidence, and strength begins now. Every step builds the foundation of the woman you're becoming.
+      <div className="photo-upload-cont" >
+        <h3 style={{fontSize:'20px'}}>Start Building Your Best Self</h3>
+        <p className="para">Your journey to empowerment, confidence, and strength begins now. Every step builds the foundation of the woman you're becoming.
           Submit your photo now, and don't forget to snap tomorrow's first thing in the morning. This is your time to take ownership—let's go.</p>
 
         {/* Form to select and upload photo */}
@@ -87,14 +87,14 @@ function PhotoUpload() {
             onChange={handleFileChange}
             required
           />
+       
 
           <ButtonToGo
-            className="submit-button" type="submit"
+             type="submit"
             path={`/VideoLauncher/${id}`}
             label='Submit Your Photo' />
 
-          <p></p>
-          <p></p>
+          
         </form>
       </div>
 
