@@ -1,51 +1,32 @@
-/* General layout */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #1e3a8a; /* Blue background */
-  color: white; /* White text */
-  padding: 20px;
-  height: 240px;
-  width: 300px;
-  text-align: center;
-  border-radius: 10%;
-  /* margin-left: 20px; */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  }
-  
-  /* Buttons container */
-.button-container {
-  display: flex;
-  justify-content: center; /* Centers the buttons horizontally */
-  align-items: center;
-  gap: 20px; /* Adds space between buttons */
-  margin-top: 20px; /* Optional: Adds space above the buttons */
+/*General layout*/
+
+h2 {
+  color: #ffffff;
+  background-color: #1e3a8a;
+  font-size: 50px;
 }
-  
-  
-  /* Text styling */
-  h1, h4 {
-    margin: 10px 0;
-    margin-left: 400px;
-  }
-  h4{
-    color: #4853d4;
-    font-size: 20px;
-  }
-  h1{
-    color: #4853d4;
-    font-size: 50px;
-  }
-  h3{
-    margin-top: 60px;
-    margin-bottom: 5px;
-  }
-  p{
-    font-size: 10px;
-    text-align: justify;
-  }
+
+.Instagram-Container {
+  display: flex;
+  background-color: #1e3a8a;
+  height: 285px;
+  width: 430px;
+  text-align: center;
+}
+
+.Instagram-Button-Container {
+  align-items: flex-end;
+  align-items: end;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 16px;
+  height: 50px;
+  width: 250px;
+  background-color: #da3993;
+  color: #ffffff;
+}
+
+.btn-to-go:hover {
+  background-color: #ca3e63;
+}
