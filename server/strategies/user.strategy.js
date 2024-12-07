@@ -18,6 +18,7 @@ passport.deserializeUser((id, done) => {
       if (user) {
         delete user.password; // Remove password from the response
         done(null, user); // Return the user object (without the password) to the session
+
       } else {
         done(null, null); // No user found
       }

@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import userProgressSaga from './userprogress.saga';
 import userImageSaga from './userimage.saga';
+import phasesSaga from './phases.saga';
 
 
 // rootSaga is the primary saga.
@@ -20,5 +21,7 @@ export default function* rootSaga() {
     userSaga(),
     userProgressSaga(),
     userImageSaga(),
+    phasesSaga(),
+    
   ]);
 }
