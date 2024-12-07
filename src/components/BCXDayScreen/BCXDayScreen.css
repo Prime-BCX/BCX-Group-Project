@@ -73,9 +73,12 @@
   }
   
   .task-row.completed {
-    background: #d0ffd0;
+    background: #d0ffd0; 
     color: #000;
+    border: 1px solid #74b9ff; 
   }
+
+
   
   .task-icon {
     margin-right: 10px;
