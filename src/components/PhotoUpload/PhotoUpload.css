@@ -2,11 +2,10 @@
 .mycontainer {
   text-align: center;
   color:#1e3a8a;
-  /* margin-right: 85px; */
-  /* margin-left: -25px; */
+  
 }
 
-.photo-upload-container {
+.photo-upload-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +13,7 @@
     background-color: #1e3a8a; /* Blue background */
     color: #ffffff; /* White text */
     padding: 20px;
-    height: 240px;
+    height: 400px;
     width: 300px;
     text-align: center;
     border-radius: 10%;
@@ -26,12 +25,12 @@
   }
   
   /* Button styles */
-  .submit-button {
+  .submit {
     background-color: #da3993; /* Pink button */
     color: #ffffff;
     border: none;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     border-radius: 8px;
     margin-top: 5px;
@@ -46,7 +45,7 @@
   /* Text styling */
   h1{
     margin: 10px 0;
-    margin-left: 100px;
+    margin-left: 80px;
     text-align: center;
     color:#1e3a8a
     
@@ -64,8 +63,8 @@
     margin-top: 20px;
     margin-bottom: 5px;
   }
-  p{
-    font-size: 14px;
+  .para{
+    font-size: 18px;
     text-align: justify;
   }
   .progress-item {

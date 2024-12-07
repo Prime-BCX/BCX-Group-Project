@@ -5,7 +5,7 @@ function* fetchUserProgress(action) {
     const id = action.payload;
     console.log("Validating user id at the Saga", id);
     try{
-        const userProgressResponse = yield axios.get(`/api/userprogress/${id}`);
+        const userProgressResponse = yield axios.get(`/api/userProgress/${id}`);
         console.log('user progress response:', userProgressResponse.data);
         yield put({type: 'SET_USER_PROGRESS', payload:userProgressResponse.data})
     }

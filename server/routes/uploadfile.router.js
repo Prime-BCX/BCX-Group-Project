@@ -3,10 +3,8 @@ const AWS = require("aws-sdk");
 const multer = require("multer");
 const router = express.Router();
 
-
-// Set up AWS S3
 const s3 = new AWS.S3();
-//const BUCKET_NAME = "bcxprime";  // Replace with your S3 bucket name
+
 
 // Set up Multer storage (in-memory)
 const storage = multer.memoryStorage();
@@ -26,7 +24,7 @@ router.post("/upload", upload.single("file"), (req, res) => {
   // Set up S3 upload parameters
   const params = {
     Bucket: 'bcxprime', // S3 bucket name
-    Key: fileName,         // Path within the bucket (e.g., "uploads/filename")
+    Key: fileName,      // Path within the bucket (e.g., "uploads/filename")
     Body: file.buffer,
     ContentType: file.mimetype,
   };
