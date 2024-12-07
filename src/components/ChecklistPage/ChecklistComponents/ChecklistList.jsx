@@ -32,17 +32,22 @@ function ChecklistList({day = 1})  {
           default:
             setCheckListDisabled([false, false, false, false, false, false, false])
         }
-      }, [step]); // Dependency on `step`
+
+        console.log(enabledHabits.length)
+        if((step < 5 && enabledHabits.length == step) || (enabledHabits.length >= step + 1)){
+          history.push('/BCXDayScreen');
+        }
+      }, [step, enabledHabits]); 
     
 
-    const handleCheck = (event, habit) =>  {
+    const handleCheck =async (event, habit) =>  {
       if(event.target.checked !== undefined) {
         console.log(habit);
         console.log(event.target.checked);
         if(event.target.checked){
           if(habit == 'daily_nourish1'){
             if(enabledHabits.includes('daily_nourish2')){
-              axios.post('/api/userprogress/setHabit', {
+              await axios.post('/api/userprogress/setHabit', {
                 habit: 'daily_nourish',
                 truefalse: true,
                 id: user.id
@@ -56,7 +61,7 @@ function ChecklistList({day = 1})  {
           else if(habit == 'daily_nourish2'){
             if(enabledHabits.includes('daily_nourish1')){
               //only send nourish if 4 and 5 are both completed
-              axios.post('/api/userprogress/setHabit', {
+              await axios.post('/api/userprogress/setHabit', {
                 habit: 'daily_nourish',
                 truefalse: true,
                 id: user.id
@@ -68,7 +73,7 @@ function ChecklistList({day = 1})  {
             }
           }
           else {
-            axios.post('/api/userprogress/setHabit', {
+            await axios.post('/api/userprogress/setHabit', {
               habit: habit,
               truefalse: true,
               id: user.id
@@ -78,7 +83,7 @@ function ChecklistList({day = 1})  {
         }
         else if (!event.target.checked){
           if(habit == 'daily_nourish1' || habit == 'daily_nourish2'){
-            axios.post('/api/userprogress/setHabit', {
+            await axios.post('/api/userprogress/setHabit', {
               habit: 'daily_nourish',
               truefalse: false,
               id: user.id
@@ -86,7 +91,7 @@ function ChecklistList({day = 1})  {
             setEnabledHabits(enabledHabits => enabledHabits.filter(item => item !== habit))
           }
           else {
-            axios.post('/api/userprogress/setHabit', {
+            await axios.post('/api/userprogress/setHabit', {
               habit: habit,
               truefalse: false,
               id: user.id
