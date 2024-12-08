@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './BCXDayScreen.css';
+import html2canvas from 'html2canvas';
 
 function BCXDayScreen() {
   const dispatch = useDispatch();
@@ -8,8 +9,29 @@ function BCXDayScreen() {
   // Select data from Redux state
   const userId = useSelector((state) => state.user.id);
   const userProgress = useSelector((state) => state.userProgressReducer.progress || {});
-  const dailyHabits = useSelector((state) => state.dailyHabitsReducer.dailyHabits || []);
-console.log(userProgress)
+
+  const openInstagram = () => {
+    const screenshotElement = document.getElementById('screenshotElement');
+    html2canvas(screenshotElement).then((canvas)=> {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png');
+      link.download = 'bcxGraphic.png';
+      link.click();
+    })
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    console.log('is Mobile?', isMobile);
+    const instagramUrl = "https://www.instagram.com";
+    const instagramAppUrl = "instagram://";
+    if(isMobile){
+      window.location.href = instagramAppUrl;
+      setTimeout(() => {
+        window.location.href = instagramUrl;
+      }, 500);
+    } else {
+      window.location.href = instagramUrl;
+    }
+}
+
   // Dispatch actions to fetch data when the component loads
   useEffect(() => {
     if (userId) {
@@ -44,15 +66,16 @@ console.log(userProgress)
   ];
 
   return (
-    <div className="bcx-container">
+    <div>
+    <div className="bcx-container" id='screenshotElement'>
       <header className="bcx-header">
         <h1 className="bcx-title">BCX</h1>
         <h2 className="bcx-day">DAY {userProgress[0].day || 'Loading...'}</h2>
-        <div className="bcx-status">{userProgress.status === 'DONE' ? 'DONE' : 'IN PROGRESS'}</div>
+        <div className="bcx-status">{userProgress[0].day == 100 ? 'DONE!' : 'IN PROGRESS'}</div>
       </header>
 
       <div className="bcx-progress-bar">
-        {/* <div className="progress" style={{ width: `${userProgress.progress || 0}%` }}></div> */}
+        { <div className="progress" style={{ width: `${userProgress[0].day || 0}%` }}></div> }
       </div>
 
       <section className="bcx-tasks">
@@ -70,7 +93,7 @@ console.log(userProgress)
           );
         })}
       </section>
-
+      
       {/* <section className="bcx-build">
         <h2 className="build-title">BUILD</h2>
         {buildCategories.map((category, index) => (
@@ -127,6 +150,9 @@ console.log(userProgress)
   ))}
 </section>
 
+
+    </div>
+    <button className='instagramButton' onClick={openInstagram}>Share on Instagram!</button>
     </div>
   );
 }

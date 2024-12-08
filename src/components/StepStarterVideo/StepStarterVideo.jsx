@@ -36,7 +36,7 @@ function StepStarterVideo() {
   //console.log('my step',stepData.stepData.step_text)
   return (
     <div className="video-launcher-container">
-      <VideoPlayer videoUrl={stepData?.videoUrl} />
+      {stepData?.videoUrl && <VideoPlayer videoUrl={stepData?.videoUrl} />}
       {console.log(stepData?.stepData)}
       <div className="step-info">
         <h3>Step{stepData?.stepData?.stepid}: {stepData?.stepData?.step_text}</h3>
