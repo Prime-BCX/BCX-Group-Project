@@ -22,7 +22,12 @@ function StepStarterVideo() {
     if (userProgress.length > 0) {
       const stepId = userProgress[0].step; // Extract stepId from user progress
       console.log('step id at step started video before sending to router', stepId)
-      dispatch({ type: 'FETCH_STEPS', payload: stepId }); // Fetch step data
+      if (stepId == 0){
+        dispatch({ type: 'FETCH_STEPS', payload: 1 }); // Fetch step data
+      }
+      else{
+        dispatch({ type: 'FETCH_STEPS', payload: stepId }); // Fetch step data
+      }
     }
   }, [dispatch, userProgress]);
 
