@@ -36,16 +36,16 @@ function StepStarterVideo() {
   //console.log('my step',stepData.stepData.step_text)
   return (
     <div className="video-launcher-container">
-      <VideoPlayer videoUrl={stepData.videoUrl} />
-      {console.log(stepData.stepData)}
+      <VideoPlayer videoUrl={stepData?.videoUrl} />
+      {console.log(stepData?.stepData)}
       <div className="step-info">
-        <h3>Step{stepData.stepData.stepid}: {stepData.stepData.step_text}</h3>
+        <h3>Step{stepData?.stepData?.stepid}: {stepData?.stepData?.step_text}</h3>
       </div>
 
       <div className="bottom">
         
         <ButtonToGo
-          label={`START STEP ${stepData.stepData.stepid}`}
+          label={`START STEP ${stepData?.stepData?.stepid}`}
           path="/main" />
 
         <div className="faq-link-container">
