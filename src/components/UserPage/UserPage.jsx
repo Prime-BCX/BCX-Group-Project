@@ -32,7 +32,7 @@ function UserPage() {
         history.push(`/MissedDayView/${user.id}`)
         console.log('warn screen!');
       }
-      else if(userProgress[0].day % 10 == 0){
+      else if((userProgress[0].day % 10 == 0) && (userProgress[0].day < 61)){
         //case: user needs to go to stepStarterVideo
         history.push(`/StepStarterVideo/${user.id}`)
         console.log('new step time!');

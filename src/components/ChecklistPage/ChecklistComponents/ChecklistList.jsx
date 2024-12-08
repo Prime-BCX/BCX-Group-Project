@@ -9,7 +9,7 @@ function ChecklistList({day = 1})  {
     const [checkListDisabled, setCheckListDisabled] = useState([false, true, true, true, true, true, true]);
     const history = useHistory();
     const user = useSelector((state) => state.user);
-    const step = Math.floor(day / 10) + 1;
+    const step = Math.min(Math.floor(day / 10) + 1, 6);
     const [enabledHabits, setEnabledHabits] = useState([]);
     //the checklistdisabled array must be initialized in this clunky way because step 5 has 2 associated checkboxes
     useEffect(() => {
