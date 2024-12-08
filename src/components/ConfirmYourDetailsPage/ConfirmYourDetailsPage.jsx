@@ -22,20 +22,38 @@ function ConfirmYourDetailsPage() {
 
         // Only dispatch the registration action if all required fields are filled
         if (tempUser.email && tempUser.firstName && tempUser.lastName && tempUser.password && tempUser.timezone) {
-            dispatch({
+            const timezoneProcessed = processTimezone(tempUser.timezone);
+                dispatch({
                 type: 'REGISTER',
                 payload: {
                     email: tempUser.email,
                     first_name: tempUser.firstName,
                     last_name: tempUser.lastName,
                     password: tempUser.password,
-                    timezone: tempUser.timezone,
+                    dayEndTime: timezoneProcessed,
                 },
             });
         } else {
             console.log("Form is not complete");
         }
     };
+
+    const processTimezone = (timezone) => {
+        //convert EST, MST, CST, PST to dayEndTime
+        //dayEndTime = hours from GMT (i.e. CST = 6)
+        switch(timezone){
+            case 'EST':
+                return 7;
+            case 'CST':
+                return 6;
+            case 'MST':
+                return 5;
+            case 'EST':
+                return 4;
+            default:
+                return 6;
+        }
+    }
 
     return (
         <div className="confirm-container">
