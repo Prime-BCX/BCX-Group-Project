@@ -78,6 +78,7 @@ function ConfirmYourDetailsPage() {
                         className='confirm-pink-button'>
                     </ButtonToGo>
                     <button
+                        className = 'registerConfirmButton'
                         onClick={handleNavigate}
                         label='Looks Good!'>Looks Good!
                     </button>
