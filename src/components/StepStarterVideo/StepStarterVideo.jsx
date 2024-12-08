@@ -22,7 +22,12 @@ function StepStarterVideo() {
     if (userProgress.length > 0) {
       const stepId = userProgress[0].step; // Extract stepId from user progress
       console.log('step id at step started video before sending to router', stepId)
-      dispatch({ type: 'FETCH_STEPS', payload: stepId }); // Fetch step data
+      if (stepId == 0){
+        dispatch({ type: 'FETCH_STEPS', payload: 1 }); // Fetch step data
+      }
+      else{
+        dispatch({ type: 'FETCH_STEPS', payload: stepId }); // Fetch step data
+      }
     }
   }, [dispatch, userProgress]);
 
@@ -31,16 +36,16 @@ function StepStarterVideo() {
   //console.log('my step',stepData.stepData.step_text)
   return (
     <div className="video-launcher-container">
-      <VideoPlayer videoUrl={stepData.videoUrl} />
-
+      <VideoPlayer videoUrl={stepData?.videoUrl} />
+      {console.log(stepData?.stepData)}
       <div className="step-info">
-        <h3>Step{stepData.stepId}: {stepData.step_text}</h3>
+        <h3>Step{stepData?.stepData?.stepid}: {stepData?.stepData?.step_text}</h3>
       </div>
 
       <div className="bottom">
         
         <ButtonToGo
-          label={`START STEP ${stepData.stepId}`}
+          label={`START STEP ${stepData?.stepData?.stepid}`}
           path="/main" />
 
         <div className="faq-link-container">

@@ -59,4 +59,7 @@ p {
   text-align: justify;
 }
 
-.step {}
+.underlinePink {
+  text-decoration: underline;
+  color:#e6a0fb
+}

@@ -45,3 +45,15 @@ Responsive Grid: One Column Default, Two Columns When Space Allows
     flex: 1 0 50%; /* Half-width for two columns */
     /* max-width: 50%;  */
 }
+
+.registerConfirmButton{
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 30px;
+    height: 50px;
+    width: 250px;
+    background-color: #da3993;
+    color: white;
+}
