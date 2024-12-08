@@ -17,19 +17,22 @@ function BCXDayScreen() {
       link.href = canvas.toDataURL('image/png');
       link.download = 'bcxGraphic.png';
       link.click();
-    })
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    console.log('is Mobile?', isMobile);
-    const instagramUrl = "https://www.instagram.com";
-    const instagramAppUrl = "instagram://";
-    if(isMobile){
-      window.location.href = instagramAppUrl;
       setTimeout(() => {
-        window.location.href = instagramUrl;
-      }, 500);
-    } else {
-      window.location.href = instagramUrl;
-    }
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        console.log('is Mobile?', isMobile);
+        const instagramUrl = "https://www.instagram.com";
+        const instagramAppUrl = "instagram://";
+        if(isMobile){
+          window.location.href = instagramAppUrl;
+          setTimeout(() => {
+            window.location.href = instagramUrl;
+          }, 500);
+        } else {
+          window.location.href = instagramUrl;
+        }
+      }, 300);
+    })
+    
 }
 
   // Dispatch actions to fetch data when the component loads
