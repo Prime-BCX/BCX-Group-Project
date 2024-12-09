@@ -83,6 +83,7 @@ function PhotoUpload() {
         <form onSubmit={handleSubmit}>
           <input
             type="file"
+            className='inputPhoto'
             accept="image/*"
             onChange={handleFileChange}
             required
