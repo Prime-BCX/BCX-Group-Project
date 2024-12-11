@@ -14,20 +14,6 @@ function LoginForm() {
   const history = useHistory();
   const user = useSelector((store) => store.user);
 
-  const magicClickMid = (event) => {
-    event.preventDefault();
-    console.log('magic click!');
-    setEmail('ella@day46.com');
-    setPassword('password');
-  }
-
-  const magicClickEnd = (event) => {
-    event.preventDefault();
-    console.log('magic click!');
-    setEmail('george@lastday.com');
-    setPassword('password');
-  }
-
   const login = (event) => {
 
     event.preventDefault();
@@ -94,8 +80,6 @@ function LoginForm() {
 
       </div>
       <div className="create-profile-container">
-      <button className="create-profile-button" onClick={() => magicClickMid(event)}>Log in as Ella</button>
-      <button className="create-profile-button" onClick={() => magicClickEnd(event)}>Log in as George</button>
     <button className="create-profile-button" onClick={() => history.push('/register')}>
       CREATE NEW PROFILE
     </button>
