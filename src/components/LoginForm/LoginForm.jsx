@@ -56,6 +56,7 @@ function LoginForm() {
             name="email"
             required
             value={email}
+            className='superSpecificInput'
             onChange={(event) => setEmail(event.target.value)}
           />
         </label>
@@ -68,6 +69,7 @@ function LoginForm() {
             name="password"
             required
             value={password}
+            className='superSpecificInput'
             onChange={(event) => setPassword(event.target.value)}
           />
         </label>

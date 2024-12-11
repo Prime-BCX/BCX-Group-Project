@@ -34,7 +34,6 @@ function RegisterForm() {
     }
   };
 
-
   // // // Handle form submission
   // const registerUser = (event) => {
   //   event.preventDefault(); // Prevent form submission from causing page reload or redirect

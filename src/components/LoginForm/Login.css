@@ -36,7 +36,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 105%; /* Button matches input width */
+    width: 65%; /* Button matches input width */
 
   }
   
@@ -96,4 +96,8 @@
 
   .name{
     font-size: 300px;
+  }
+
+  .superSpecificInput{
+    width: 60%;
   }

@@ -92,3 +92,11 @@
  .complete{
     background-color: #ffffff;
  }
+
+ .progress-container{
+  margin-top: 500px;
+ }
+
+ .inputPhoto{
+  width: 90%;
+ }

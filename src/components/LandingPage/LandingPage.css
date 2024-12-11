@@ -90,3 +90,7 @@
     width: 100%;
   }
 }
+
+.headingBoxCss {
+  border-radius: 12px;
+}

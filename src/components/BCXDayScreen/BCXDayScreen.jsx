@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './BCXDayScreen.css';
 import html2canvas from 'html2canvas';
-
+import Confetti from 'react-confetti';
 function BCXDayScreen() {
   const dispatch = useDispatch();
 
@@ -71,6 +71,7 @@ function BCXDayScreen() {
   return (
     <div>
     <div className="bcx-container" id='screenshotElement'>
+    {userProgress[0].day == 100 && <Confetti />}
       <header className="bcx-header">
         <h1 className="bcx-title">BCX</h1>
         <h2 className="bcx-day">DAY {userProgress[0].day || 'Loading...'}</h2>

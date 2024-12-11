@@ -17,7 +17,7 @@ function ChecklistProgressBar({day = 1})  {
 
 
     return (
-        <div className = "progress-container">
+        <div className = "progress-container-cl">
             <div className = "progress-label">
                 <span className='progress-label'>{progressBarLabel}</span>
             </div>
