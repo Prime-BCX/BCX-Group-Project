@@ -34,14 +34,6 @@ function RegisterForm() {
     }
   };
 
-  const magicClick = () => {
-    console.log('magic click!');
-    setEmail('realperson@work.com');
-    setFirstName('Vincent');
-    setLastName('Adultman');
-    setPassword('password');
-    handleTimezoneSelect('CST');
-  }
   // // // Handle form submission
   // const registerUser = (event) => {
   //   event.preventDefault(); // Prevent form submission from causing page reload or redirect
@@ -83,7 +75,7 @@ function RegisterForm() {
   return (
 
     <form className="formPanel" onSubmit={handleNavigate}  >
-      <h2 onClick={magicClick}>Please Register</h2>
+      <h2>Please Register</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
