@@ -21,7 +21,7 @@ function LandingPage() {
 
   return (
     <div className="container">
-      <h2 className="heading">{heading}</h2>
+      <h2 className="heading headingBoxCss" >{heading}</h2>
 
       <div className="boxB">
        

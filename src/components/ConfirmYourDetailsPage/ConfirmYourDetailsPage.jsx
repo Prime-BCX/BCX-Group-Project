@@ -48,7 +48,7 @@ function ConfirmYourDetailsPage() {
                 return 6;
             case 'MST':
                 return 5;
-            case 'EST':
+            case 'PST':
                 return 4;
             default:
                 return 6;
