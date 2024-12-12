@@ -35,7 +35,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail', 
   auth: {
     user: 'bcxreminder@gmail.com',
-    pass: 'cgns qzln hkis iwsx',
+    pass: process.env.GMAILPASS || 'dummypass',
   },
 });
 
