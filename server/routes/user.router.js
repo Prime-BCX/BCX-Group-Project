@@ -12,6 +12,7 @@ const router = express.Router();
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
   res.send(req.user);
+  
 });
 
 // Handles POST request with new user data
@@ -19,18 +20,36 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // is that the password gets encrypted before being inserted
 router.post('/register', (req, res, next) => {
   const username = req.body.username;
+  const email = req.body.email;
+  const first_name = req.body.first_name;
+  const last_name = req.body.last_name;
+  const dayEndTime = req.body.dayEndTime;
   const password = encryptLib.encryptPassword(req.body.password);
+  
 
-  const queryText = `INSERT INTO "user" (username, password)
-    VALUES ($1, $2) RETURNING id`;
-  pool
-    .query(queryText, [username, password])
-    .then(() => res.sendStatus(201))
-    .catch((err) => {
-      console.log('User registration failed: ', err);
+  const queryText = `INSERT INTO "user" (email,first_name,last_name,password, "dayEndTime", notify, "challenge_complete")
+    VALUES ($1, $2, $3, $4, $5, true, false) RETURNING id`;
+  const progressText = `INSERT INTO "userProgress" (id, day, step, missed_days, warning)
+    VALUES ($1, 1, 0, 0, false) RETURNING id`;
+  const habitsText = `INSERT INTO "dailyHabits" (user_id, date, daily_hydrate, daily_grow, daily_move, daily_focus, daily_nourish, daily_dinner) VALUES
+    ($1, CURRENT_DATE, false, false, false, false, false, false)`;
+    pool
+    .query(queryText, [email, first_name, last_name, password, dayEndTime])
+    .then(res => {
+      const userId = res.rows[0].id;
+      return pool.query(progressText, [userId]);
+    })
+    .then(res => {
+      return pool.query(habitsText, [res.rows[0].id]);
+    })
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch(err => {
+      console.log('error registering:', err);
       res.sendStatus(500);
     });
-});
+  });
 
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
